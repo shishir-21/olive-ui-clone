@@ -1,6 +1,10 @@
+import Navbar from "./components/Navbar";
+
 function App() {
   return (
-    <h1>Olive UI Clone </h1>
+    <>
+      <Navbar />
+    </>
   )
 }
 
