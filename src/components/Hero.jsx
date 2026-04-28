@@ -1,19 +1,21 @@
 import { heroHighlights, trustStats } from "../data/siteContent";
 
-// Hero is the first section users see with the main message and app preview
+// Hero section - the first thing visitors see when they land on the site
+// Shows main headline, description, and call-to-action buttons
 const Hero = () => {
   return (
     <section className="section hero-section" id="top">
       <div className="hero-layout">
+        {/* Left side - text content and buttons */}
         <div className="hero-copy">
           <span className="eyebrow">Discover Olive</span>
           <h1>The Safest Way to Shop for Groceries</h1>
           <p className="section-subtitle">
-            Use the Olive Food Scanner App to quickly spot harmful ingredients,
-            understand food quality, and make better choices for your family.
+            Use the Olive Food Scanner App to instantly eliminate harmful ingredients from your family's diet and get expert-backed food insights.
           </p>
 
           <div className="hero-actions">
+            {/* Main download button and secondary "learn more" button */}
             <a
               className="button button-primary"
               href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
@@ -25,12 +27,14 @@ const Hero = () => {
             </a>
           </div>
 
+          {/* Three main features that make Olive special */}
           <ul className="hero-highlights">
             {heroHighlights.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
 
+          {/* Social proof - statistics showing trust and scale */}
           <div className="trust-strip">
             {trustStats.map((stat) => (
               <div className="trust-item" key={stat.label}>
@@ -41,6 +45,7 @@ const Hero = () => {
           </div>
         </div>
 
+        {/* Right side - visual mockups showing the app in action */}
         <div className="hero-visual-wrap">
           <div className="hero-glow" />
 

@@ -1,3 +1,4 @@
+// Main navigation menu links that appear in the top navbar
 export const navLinks = [
   { label: "How it works", href: "#how-it-works" },
   { label: "Benefits", href: "#benefits" },
