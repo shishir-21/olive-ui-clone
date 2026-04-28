@@ -121,6 +121,7 @@
   display: grid;
   place-items: center;
   min-height: 148px;
+  overflow: hidden;
 }
 
 .analysis-card {
@@ -129,25 +130,26 @@
   height: 88px;
   border-radius: 13px;
   object-fit: cover;
-  box-shadow: 0 10px 20px rgba(42, 58, 47, 0.2);
+  transition:
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 620ms ease,
+    filter 620ms ease;
 }
 
-.analysis-card.center {
-  z-index: 2;
+.analysis-card.is-center {
   width: 74px;
   height: 96px;
+  box-shadow: 0 14px 26px rgba(42, 58, 47, 0.3);
+  filter: blur(0);
 }
 
-.analysis-card.side-left {
-  transform: translateX(-56px) scale(0.92);
-  filter: blur(1.2px) brightness(0.98);
-  opacity: 0.62;
+.analysis-card.is-near {
+  box-shadow: 0 8px 18px rgba(42, 58, 47, 0.2);
+  filter: none;
 }
 
-.analysis-card.side-right {
-  transform: translateX(56px) scale(0.92);
-  filter: blur(1.2px) brightness(0.98);
-  opacity: 0.62;
+.analysis-card.is-far {
+  filter: none;
 }
 
 .analysis-pill {
