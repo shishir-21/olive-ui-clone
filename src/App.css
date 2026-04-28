@@ -426,6 +426,12 @@
   gap: 24px;
 }
 
+.work-stack--horizontal {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
 .work-card {
   display: grid;
   grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1fr);
@@ -444,6 +450,18 @@
 
 .work-card:nth-child(even) > :first-child {
   order: 2;
+}
+
+.work-card--horizontal {
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: stretch;
+  min-height: auto;
+  padding: 28px;
+}
+
+.work-card--horizontal > :first-child {
+  order: 0;
 }
 
 .safe-pill,
@@ -1249,6 +1267,10 @@
     order: 0;
   }
 
+  .work-stack--horizontal {
+    grid-template-columns: 1fr;
+  }
+
   .pricing-title {
     place-items: center;
     text-align: center;
@@ -1361,7 +1383,8 @@
   .testimonials-grid,
   .pricing-grid,
   .app-slide-row,
-  .footer-links {
+  .footer-links,
+  .work-stack--horizontal {
     grid-template-columns: 1fr;
   }
 

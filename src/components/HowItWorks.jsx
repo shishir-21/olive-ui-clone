@@ -10,8 +10,8 @@ const HowItWorks = () => {
         <h2>How the Olive Food Scanner App Works</h2>
       </div>
 
-      <div className="work-stack">
-        <article className="work-card work-card--scan">
+      <div className="work-stack work-stack--horizontal">
+        <article className="work-card work-card--horizontal work-card--scan">
           <div className="scan-visual" aria-label="Barcode scanning avocado">
             <img src="/images/barcode-image.webp" alt="Avocado with barcode sticker" />
             <span className="scan-corner scan-corner-top-left" aria-hidden="true" />
@@ -25,7 +25,7 @@ const HowItWorks = () => {
           </div>
         </article>
 
-        <article className="work-card work-card--data">
+        <article className="work-card work-card--horizontal work-card--data">
           <div className="mini-product-grid">
             {groceryProducts.slice(0, 10).map((product) => (
               <div className="mini-product" key={product}>
@@ -40,7 +40,7 @@ const HowItWorks = () => {
           </div>
         </article>
 
-        <article className="work-card work-card--recipes">
+        <article className="work-card work-card--horizontal work-card--recipes">
           <div className="recipe-rail">
             {recipeSuggestions.map((recipe) => (
               <span key={recipe}>{recipe}</span>
