@@ -5,10 +5,13 @@ import {
   warningTags,
 } from "../data/siteContent";
 
-// Benefits shows what Olive gives parents and why it matters
+// Benefits section - shows the health benefits and real outcomes of using Olive
+// Left side: two insight cards explaining nutritional clarity and ingredient filtering
+// Right side: product score example showing how Olive rates food
 const Benefits = () => {
   return (
     <section className="section" id="benefits">
+      {/* Section header explaining what Olive benefits do */}
       <div className="section-header">
         <span className="eyebrow">Health benefits</span>
         <h2>Ingredient clarity that busy families can actually use</h2>
@@ -18,7 +21,9 @@ const Benefits = () => {
         </p>
       </div>
 
+      {/* Two column layout: cards on left, score example on right */}
       <div className="grid-two benefits-grid">
+        {/* Left column - Two insight cards about Olive's main benefits */}
         <div className="benefit-stack">
           {insightCards.map((card) => (
             <article className="benefit-card card" key={card.title}>
@@ -34,6 +39,7 @@ const Benefits = () => {
           ))}
         </div>
 
+        {/* Right column - Example score card showing how a product is rated */}
         <div className="benefit-side">
           <article className="score-panel card">
             <div className="score-panel-top">
@@ -44,6 +50,7 @@ const Benefits = () => {
               <div className="big-score">88</div>
             </div>
 
+            {/* Green tags showing positive ingredients and properties */}
             <div className="tag-panel">
               <h4>Positive signals</h4>
               <div className="chip-wrap good">
@@ -53,6 +60,7 @@ const Benefits = () => {
               </div>
             </div>
 
+            {/* Red tags showing warnings and harmful ingredients to watch for */}
             <div className="tag-panel">
               <h4>Warnings Olive checks</h4>
               <div className="chip-wrap warning">

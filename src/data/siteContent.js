@@ -1,3 +1,4 @@
+// Main navigation menu links that appear in the top navbar
 export const navLinks = [
   { label: "How it works", href: "#how-it-works" },
   { label: "Benefits", href: "#benefits" },
@@ -17,21 +18,22 @@ export const heroHighlights = [
   "Simple food safety checks for parents",
 ];
 
+// The 3 main steps that show how Olive works
 export const howItWorksSteps = [
   {
     title: "Scan & Detect",
     description:
-      "Scan a product barcode and instantly check ingredients before it goes into your cart.",
+      "When you open Olive simply scan the barcode to instantly detect product ingredients. Olive's intuitive design means busy parents can quickly see which items contain harmful substances, delivering peace of mind with every scan.",
   },
   {
-    title: "Data Analysis",
+    title: "Data Analysis & Validation",
     description:
-      "Olive compares each product with food data and expert-backed ingredient rules.",
+      "After scanning, our food scanner app compares product data with an extensive, up-to-date food database. Using expert nutritional guidelines, Olive filters out potentially dangerous ingredients so you never have to second guess.",
   },
   {
-    title: "Smart Suggestions",
+    title: "Actionable Insights & Recommendations",
     description:
-      "Get a simple safety summary and better choices for your family in seconds.",
+      "Once analyzed, Olive provides tailored insights and healthier product suggestions. Olive proactively flags harmful ingredients and offers personalized recommendations, empowering you to make better choices for your family's health and nutrition.",
   },
 ];
 
@@ -152,26 +154,26 @@ export const faqs = [
   {
     question: "What is the Food Scanner App and how does it work?",
     answer:
-      "Olive lets you scan a product barcode, review ingredient quality, and see a simple health score with safer recommendations.",
+      "Open Olive and scan any product barcode. The app instantly detects ingredients and shows you a safety score. You get clear health insights in seconds - no confusing ingredient lists.",
   },
   {
-    question: "How does Olive ensure accuracy?",
+    question: "How does Olive ensure accuracy of results?",
     answer:
-      "The app experience shown here is frontend only, but the design reflects Olive's focus on ingredient rules, data checks, and expert-backed guidance.",
+      "Olive compares each product against an extensive food database using expert-backed nutritional guidelines. Our scoring is designed by registered holistic health experts to filter out potentially dangerous ingredients.",
   },
   {
-    question: "Which products can I scan?",
+    question: "Which products can I scan with Olive?",
     answer:
-      "The landing page suggests grocery and packaged food products with barcodes, especially products parents buy often for the home.",
+      "You can scan most packaged grocery products with a barcode - from snacks and sauces to ice cream and milk. The app works best with products that have barcodes on supermarket shelves.",
   },
   {
-    question: "Can Olive match dietary preferences?",
+    question: "Can Olive work with my family's dietary needs?",
     answer:
-      "The UI highlights food values like organic, gluten-free, and low-PFAS options to show how personalized filtering could look.",
+      "Yes! Olive flags dietary-specific items like gluten-free, dairy-free, non-GMO, and organic options. You get personalized recommendations based on health values that matter to your family.",
   },
   {
-    question: "When will Android be available?",
+    question: "Is my data secure with Olive?",
     answer:
-      "The live site mentions Android availability as a common question, so this clone includes that FAQ item without implementing platform logic.",
+      "Your privacy matters to us. Olive uses secure data protection and never monetizes user data through ads or brand deals - keeping our recommendations always aligned with family health and safety.",
   },
 ];

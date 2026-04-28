@@ -10,11 +10,20 @@ import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
-    // page-shell makes the whole landing page feel like one clean card
+    // Main page wrapper - creates the overall page structure and styling
     <div className="page-shell">
+      {/* Navigation bar at the top - visible on all pages */}
       <Navbar />
+      
       <main className="page-main">
-        {/* This is the main landing page flow for the Olive clone */}
+        {/* Landing page sections in order:
+            1. Hero - Main headline and call to action
+            2. HowItWorks - Three step explanation of how Olive works
+            3. Benefits - Health benefits and what Olive does for families
+            4. Testimonials - Real customer reviews and success stories
+            5. Pricing - Subscription plans and comparison
+            6. FAQ - Frequently asked questions with answers
+        */}
         <Hero />
         <HowItWorks />
         <Benefits />
@@ -23,7 +32,7 @@ function App() {
         <Faq />
       </main>
 
-      {/* Footer shows the final call to action and site bottom info */}
+      {/* Footer at the bottom - shows final CTA and site links */}
       <Footer />
     </div>
   );
