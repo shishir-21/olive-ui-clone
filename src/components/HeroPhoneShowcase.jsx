@@ -1,19 +1,19 @@
 const heroProducts = [
   {
-    src: "/products/san-pellegrino-store.webp",
-    alt: "San Pellegrino bottle",
+    src: "/products/olive-product-5.png",
+    alt: "Olive product scan preview",
   },
   {
-    src: "/products/san-pellegrino-details.webp",
-    alt: "San Pellegrino details",
+    src: "/products/olive-product-2.png",
+    alt: "Sea salt product preview",
   },
   {
-    src: "/products/san-pellegrino-store.webp",
-    alt: "San Pellegrino in store",
+    src: "/products/olive-product-4.png",
+    alt: "Honey product preview",
   },
   {
-    src: "/products/san-pellegrino-details.webp",
-    alt: "San Pellegrino app screen",
+    src: "/products/olive-product-3.png",
+    alt: "Sparkling tonic product preview",
   },
 ];
 

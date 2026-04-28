@@ -46,7 +46,10 @@ const Hero = () => {
           className="button button-primary"
           href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
         >
-          <span className="apple-mark" aria-hidden="true" />
+          <svg className="apple-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15.1 6c1.5.1 3.5 1 4.7 2.6-.9.5-2.5 1.3-2.5 3.8 0 2.4 1.8 3 2.7 3.3-.3 2.4-3 6.3-5.3 6.3-.8 0-1.3-.1-2-.3-.5-.2-.8-.2-1.2-.2-.5 0-.9.1-1.7.3-.6.1-1 .2-1.5.2C5.5 22 3 16.9 3 12.9 3 9.1 4.8 6 8.3 6c.7 0 1.3.2 2.2.7.7.3.9.4 1 .4.1 0 .3-.1 1.1-.5 1-.5 1.8-.7 2.5-.6Z" />
+            <path d="M14 1a1 1 0 0 1 1 1 3 3 0 0 1-3 3 1 1 0 0 1-1-1 3 3 0 0 1 3-3Z" />
+          </svg>
           Download for iOS
         </a>
 

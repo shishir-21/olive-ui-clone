@@ -174,35 +174,10 @@
   margin-top: 30px;
 }
 
-.apple-mark {
-  position: relative;
+.apple-icon {
   width: 17px;
-  height: 18px;
-}
-
-.apple-mark::before,
-.apple-mark::after {
-  position: absolute;
-  display: block;
-  content: "";
-  background: currentColor;
-}
-
-.apple-mark::before {
-  right: 1px;
-  bottom: 0;
-  width: 14px;
-  height: 15px;
-  border-radius: 8px 8px 7px 7px;
-}
-
-.apple-mark::after {
-  top: -1px;
-  left: 9px;
-  width: 7px;
-  height: 5px;
-  border-radius: 8px 0 8px 0;
-  transform: rotate(-32deg);
+  height: 17px;
+  fill: currentColor;
 }
 
 .hero-phone-stage {
