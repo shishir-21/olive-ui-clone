@@ -1,4 +1,5 @@
 import { familyFaces, groceryProducts } from "../data/siteContent";
+import HeroPhoneShowcase from "./HeroPhoneShowcase";
 
 // Hero section - the first thing visitors see when they land on the site
 // Shows trust proof, main headline, app button, and moving grocery product cards
@@ -45,8 +46,11 @@ const Hero = () => {
           className="button button-primary"
           href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
         >
+          <span className="apple-mark" aria-hidden="true" />
           Download for iOS
         </a>
+
+        <HeroPhoneShowcase />
       </div>
 
       {/* Product rows create the grocery wall under the hero heading */}
