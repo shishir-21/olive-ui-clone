@@ -1,29 +1,53 @@
-import { howItWorksSteps } from "../data/siteContent";
+import { groceryProducts, howItWorksSteps, recipeSuggestions } from "../data/siteContent";
 
 // HowItWorks section - shows the three simple steps of using Olive app
-// Each step is displayed as a card with a number, title, and description
+// Each step has a visual panel so the page feels close to the live site
 const HowItWorks = () => {
   return (
     <section className="section" id="how-it-works">
-      {/* Section header with title and intro text */}
-      <div className="section-header">
-        <span className="eyebrow">How Olive works</span>
-        <h2>Simple steps for safer grocery shopping</h2>
-        <p className="section-subtitle">
-          Olive makes food decisions easier with a quick scan, a trusted
-          ingredient review, and clear next steps.
-        </p>
+      {/* Section title follows the short heading used on Olive */}
+      <div className="section-header center-header">
+        <h2>How the Olive Food Scanner App Works</h2>
       </div>
 
-      {/* Grid showing all three steps - Loop through each step and create a card */}
-      <div className="steps-grid">
-        {howItWorksSteps.map((step, index) => (
-          <article className="step-card card" key={step.title}>
-            <span className="step-number">0{index + 1}</span>
-            <h3>{step.title}</h3>
-            <p>{step.description}</p>
-          </article>
-        ))}
+      <div className="work-stack">
+        <article className="work-card work-card--scan">
+          <div className="scan-phone">
+            <div className="barcode-lines" aria-hidden="true" />
+            <span>Barcode</span>
+          </div>
+          <div>
+            <h3>{howItWorksSteps[0].title}</h3>
+            <p>{howItWorksSteps[0].description}</p>
+          </div>
+        </article>
+
+        <article className="work-card work-card--data">
+          <div className="mini-product-grid">
+            {groceryProducts.slice(0, 10).map((product) => (
+              <div className="mini-product" key={product}>
+                <span>{product.slice(0, 2)}</span>
+              </div>
+            ))}
+          </div>
+          <div>
+            <span className="safe-pill">Safe to consume</span>
+            <h3>{howItWorksSteps[1].title}</h3>
+            <p>{howItWorksSteps[1].description}</p>
+          </div>
+        </article>
+
+        <article className="work-card work-card--recipes">
+          <div className="recipe-rail">
+            {recipeSuggestions.map((recipe) => (
+              <span key={recipe}>{recipe}</span>
+            ))}
+          </div>
+          <div>
+            <h3>{howItWorksSteps[2].title}</h3>
+            <p>{howItWorksSteps[2].description}</p>
+          </div>
+        </article>
       </div>
     </section>
   );

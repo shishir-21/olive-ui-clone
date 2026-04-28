@@ -1,30 +1,39 @@
-import { comparisonItems, pricingPlans } from "../data/siteContent";
+import { appSlides, comparisonItems, pricingPlans } from "../data/siteContent";
 
 // Pricing section - shows what makes Olive different and pricing plans
-// Left side: comparison showing Olive's advantages
-// Right side: two subscription options (monthly and yearly)
+// It includes comparison bullets, price cards, and the final toxin CTA
 const Pricing = () => {
   return (
     <section className="section" id="pricing">
+      <div className="comparison-strip">
+        <div className="section-header center-header">
+          <h2>Olive Food Scanner App vs. The Rest</h2>
+          <a
+            className="button button-primary"
+            href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
+          >
+            Download for iOS
+          </a>
+        </div>
+
+        {/* Feature pills show what Olive includes compared with simple scanners */}
+        <div className="comparison-pills">
+          {comparisonItems.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+      </div>
+
       <div className="pricing-layout">
-        {/* Left column - comparison showing Olive advantages */}
-        <article className="comparison-panel card">
-          <span className="eyebrow">Olive vs. the rest</span>
-          <h2>Healthy choices with honest pricing</h2>
-          <p className="section-subtitle">
-            Olive focuses on ingredient safety, clear product scores, and
-            practical recommendations for everyday families.
-          </p>
+        <div className="pricing-title">
+          <h2>
+            Healthy Choices
+            <br />
+            Honest Pricing
+          </h2>
+        </div>
 
-          {/* List of features that make Olive unique */}
-          <ul className="comparison-list">
-            {comparisonItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </article>
-
-        {/* Right column - pricing plans with subscribe buttons */}
+        {/* Pricing plans with subscribe buttons */}
         <div className="pricing-grid">
           {pricingPlans.map((plan) => (
             <article
@@ -38,6 +47,7 @@ const Pricing = () => {
               {/* Price display with currency and billing period */}
               <div className="pricing-value">
                 <strong>{plan.price}</strong>
+                {plan.name === "yearly" && <s>$179.88</s>}
                 <span>{plan.period}</span>
               </div>
 
@@ -53,12 +63,36 @@ const Pricing = () => {
                 className={`button ${plan.highlight ? "button-primary" : "button-secondary"}`}
                 href="https://signup.oliveapp.com/olive-onboarding/"
               >
-                Choose {plan.name}
+                Subscribe
               </a>
             </article>
           ))}
         </div>
       </div>
+
+      {/* Four phone cards stand in for the app screenshots on the original page */}
+      <div className="app-slide-row" aria-label="Olive app screens">
+        {appSlides.map((slide, index) => (
+          <article className="app-slide" key={slide}>
+            <span>Slide {index + 1}</span>
+            <strong>{slide}</strong>
+          </article>
+        ))}
+      </div>
+
+      <section className="toxin-cta">
+        <h2>
+          Protect Your Family
+          <br />
+          From Hidden Toxins
+        </h2>
+        <a
+          className="button button-primary"
+          href="https://signup.oliveapp.com/olive-onboarding/"
+        >
+          Sign up for Olive today
+        </a>
+      </section>
     </section>
   );
 };
