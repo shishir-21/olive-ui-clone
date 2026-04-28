@@ -1,21 +1,30 @@
 // Main navigation menu links that appear in the top navbar
 export const navLinks = [
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Benefits", href: "#benefits" },
+  { label: "Features", href: "#how-it-works" },
   { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Blog", href: "https://www.oliveapp.com/blogs" },
+  { label: "Restaurants", href: "https://www.oliveapp.com/restaurants" },
+  { label: "Food", href: "https://www.oliveapp.com/food" },
 ];
 
-export const trustStats = [
-  { value: "3k+", label: "Trusted by healthy families" },
-  { value: "100+", label: "Ingredients flags checked" },
-  { value: "4.9/5", label: "Average parent rating" },
+export const familyFaces = [
+  { name: "Megan", color: "#f0b49b" },
+  { name: "Robert", color: "#95b68b" },
+  { name: "Jane", color: "#d7c17d" },
+  { name: "Emily", color: "#b58acb" },
 ];
 
-export const heroHighlights = [
-  "Expert-backed ingredient scoring",
-  "Healthier product suggestions",
-  "Simple food safety checks for parents",
+export const groceryProducts = [
+  "Organic Bagels",
+  "Cacao-Nectar Bar",
+  "Sparkling Tonic",
+  "Fig & Olive Crackers",
+  "San Pellegrino",
+  "Sea Salt Crisps",
+  "Larabar Cookie Dough",
+  "Sourlittles",
+  "Raw Jersey Milk",
+  "Organic Tortilla Chips",
 ];
 
 // The 3 main steps that show how Olive works
@@ -35,6 +44,14 @@ export const howItWorksSteps = [
     description:
       "Once analyzed, Olive provides tailored insights and healthier product suggestions. Olive proactively flags harmful ingredients and offers personalized recommendations, empowering you to make better choices for your family's health and nutrition.",
   },
+];
+
+export const recipeSuggestions = [
+  "Veggie Spaghetti Squash",
+  "Chhole",
+  "Lentil and Spinach Soup",
+  "Stuffed Bell Peppers",
+  "Mediterranean Quinoa Salad",
 ];
 
 export const insightCards = [
@@ -107,16 +124,16 @@ export const testimonials = [
 ];
 
 export const comparisonItems = [
-  "Detailed product breakdown",
-  "Comprehensive ingredient data",
-  "Seed oil free dining map",
-  "Certified lab-testing data",
-  "Healthier food suggestions",
+  "Detailed Product Breakdown",
+  "Comprehensive Water Data",
+  "Seed Oil Free Dining Map",
+  "Seed Oil Flagging",
+  "Certified Lab-Testing Data",
 ];
 
 export const pricingPlans = [
   {
-    name: "Monthly",
+    name: "monthly",
     price: "$14.99",
     period: "/monthly",
     highlight: false,
@@ -127,7 +144,7 @@ export const pricingPlans = [
     ],
   },
   {
-    name: "Yearly",
+    name: "yearly",
     price: "$69.99",
     period: "/yearly",
     highlight: true,
@@ -140,14 +157,33 @@ export const pricingPlans = [
   },
 ];
 
+export const appSlides = [
+  "Search foods in seconds",
+  "Check ingredient warnings",
+  "Find cleaner products",
+  "Track family-safe choices",
+];
+
 export const footerLinks = [
-  { label: "Blog", href: "https://www.oliveapp.com/blogs" },
-  { label: "Email us", href: "mailto:contact@oliveapp.com" },
-  { label: "Contact us", href: "https://www.oliveapp.com/support" },
-  { label: "Privacy Policy", href: "https://www.oliveapp.com/privacy-policy" },
-  { label: "Terms", href: "https://www.oliveapp.com/terms-of-service" },
-  { label: "Refund Policy", href: "https://www.oliveapp.com/refund-policy" },
-  { label: "Sign in", href: "https://www.oliveapp.com/sign-in" },
+  {
+    title: "Explore More Olive Tools",
+    links: [
+      { label: "Explore Foods", href: "https://www.oliveapp.com/food" },
+      { label: "Allergy Scanner App", href: "https://www.oliveapp.com/allergy-scanner-app" },
+      { label: "Gluten Free Scanner", href: "https://www.oliveapp.com/gluten-free-scanner" },
+      { label: "Dairy Free App", href: "https://www.oliveapp.com/dairy-free-app" },
+      { label: "Food Ingredient Checker", href: "https://www.oliveapp.com/food-ingredient-checker" },
+    ],
+  },
+  {
+    title: "About",
+    links: [
+      { label: "Blog", href: "https://www.oliveapp.com/blogs" },
+      { label: "Email us", href: "mailto:contact@oliveapp.com" },
+      { label: "Contact us", href: "https://www.oliveapp.com/support" },
+      { label: "Sign in", href: "https://www.oliveapp.com/sign-in" },
+    ],
+  },
 ];
 
 export const faqs = [
@@ -175,5 +211,10 @@ export const faqs = [
     question: "Is my data secure with Olive?",
     answer:
       "Your privacy matters to us. Olive uses secure data protection and never monetizes user data through ads or brand deals - keeping our recommendations always aligned with family health and safety.",
+  },
+  {
+    question: "When will the Android version be available?",
+    answer:
+      "Olive currently focuses on iOS. The Android version is listed as a future release so more families can use the scanner.",
   },
 ];
