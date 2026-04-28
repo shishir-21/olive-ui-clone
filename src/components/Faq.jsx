@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { faqs } from "../data/siteContent";
 
+// FAQ section with a simple open/close interaction
 const Faq = () => {
   // Keep one answer open to make the section easy to scan.
   const [openIndex, setOpenIndex] = useState(0);

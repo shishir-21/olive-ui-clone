@@ -1,3 +1,7 @@
+// Footer shows the final call to action and the site bottom bar
+import { footerLinks } from "../data/siteContent";
+
+// Footer shows the final call to action and the site bottom text links
 const Footer = () => {
   return (
     <footer className="footer-section">
@@ -25,11 +29,18 @@ const Footer = () => {
           <span>Olive</span>
         </a>
 
-        <div className="footer-text">
-          <span>Effortless food scanning</span>
-          <span>Peace of mind for parents</span>
-          <span>Healthy product recommendations</span>
+        <div className="footer-links">
+          {footerLinks.map((item) => (
+            <a key={item.label} href={item.href}>
+              {item.label}
+            </a>
+          ))}
         </div>
+      </div>
+
+      <div className="footer-copy">
+        <span>© 2026 Olive Inc.</span>
+        <span>Designed as a frontend clone for Olive app landing page.</span>
       </div>
     </footer>
   );

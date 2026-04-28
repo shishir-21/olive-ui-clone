@@ -1,5 +1,6 @@
 import { navLinks } from "../data/siteContent";
 
+// Navbar shows the top brand, links, and download button
 const Navbar = () => {
   return (
     <header className="navbar">

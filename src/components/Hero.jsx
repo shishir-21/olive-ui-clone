@@ -1,5 +1,6 @@
 import { heroHighlights, trustStats } from "../data/siteContent";
 
+// Hero is the first section users see with the main message and app preview
 const Hero = () => {
   return (
     <section className="section hero-section" id="top">

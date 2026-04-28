@@ -138,6 +138,16 @@ export const pricingPlans = [
   },
 ];
 
+export const footerLinks = [
+  { label: "Blog", href: "https://www.oliveapp.com/blogs" },
+  { label: "Email us", href: "mailto:contact@oliveapp.com" },
+  { label: "Contact us", href: "https://www.oliveapp.com/support" },
+  { label: "Privacy Policy", href: "https://www.oliveapp.com/privacy-policy" },
+  { label: "Terms", href: "https://www.oliveapp.com/terms-of-service" },
+  { label: "Refund Policy", href: "https://www.oliveapp.com/refund-policy" },
+  { label: "Sign in", href: "https://www.oliveapp.com/sign-in" },
+];
+
 export const faqs = [
   {
     question: "What is the Food Scanner App and how does it work?",
