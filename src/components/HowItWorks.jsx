@@ -1,4 +1,5 @@
 import { groceryProducts, howItWorksSteps, recipeSuggestions } from "../data/siteContent";
+import ProductPhone from "./ProductPhone";
 
 // HowItWorks section - shows the three simple steps of using Olive app
 // Each step has a visual panel so the page feels close to the live site
@@ -12,10 +13,7 @@ const HowItWorks = () => {
 
       <div className="work-stack">
         <article className="work-card work-card--scan">
-          <div className="scan-phone">
-            <div className="barcode-lines" aria-hidden="true" />
-            <span>Barcode</span>
-          </div>
+          <ProductPhone />
           <div>
             <h3>{howItWorksSteps[0].title}</h3>
             <p>{howItWorksSteps[0].description}</p>
