@@ -11,6 +11,12 @@ export const trustStats = [
   { value: "4.9/5", label: "Average parent rating" },
 ];
 
+export const heroHighlights = [
+  "Expert-backed ingredient scoring",
+  "Healthier product suggestions",
+  "Simple food safety checks for parents",
+];
+
 export const howItWorksSteps = [
   {
     title: "Scan & Detect",

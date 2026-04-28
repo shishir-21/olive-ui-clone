@@ -1,59 +1,95 @@
+import { heroHighlights, trustStats } from "../data/siteContent";
+
 const Hero = () => {
   return (
-    <section style={{
-      textAlign: "center",
-      padding: "60px 20px"
-    }}>
-      
-      {/* Main heading */}
-      <h1 style={{
-        fontSize: "40px",
-        fontWeight: "bold"
-      }}>
-        The Safest Way to Shop for Groceries
-      </h1>
+    <section className="section hero-section" id="top">
+      <div className="hero-layout">
+        <div className="hero-copy">
+          <span className="eyebrow">Discover Olive</span>
+          <h1>The Safest Way to Shop for Groceries</h1>
+          <p className="section-subtitle">
+            Use the Olive Food Scanner App to quickly spot harmful ingredients,
+            understand food quality, and make better choices for your family.
+          </p>
 
-      {/* Small description */}
-      <p style={{
-        marginTop: "20px",
-        color: "gray"
-      }}>
-        Scan products and know what you are eating.
-      </p>
+          <div className="hero-actions">
+            <a
+              className="button button-primary"
+              href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
+            >
+              Get Olive
+            </a>
+            <a className="button button-secondary" href="#how-it-works">
+              See how it works
+            </a>
+          </div>
 
-      {/* Buttons section */}
-      <div style={{
-        marginTop: "30px",
-        display: "flex",
-        justifyContent: "center",
-        gap: "20px"
-      }}>
-        
-        {/* Download button */}
-        <button style={{
-          padding: "12px 20px",
-          background: "green",
-          color: "white",
-          border: "none",
-          borderRadius: "25px"
-        }}>
-          Download App
-        </button>
+          <ul className="hero-highlights">
+            {heroHighlights.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
 
-        {/* Community button */}
-        <button style={{
-          padding: "12px 20px",
-          borderRadius: "25px",
-          border: "1px solid black",
-          background: "white"
-        }}>
-          Join Community
-        </button>
+          <div className="trust-strip">
+            {trustStats.map((stat) => (
+              <div className="trust-item" key={stat.label}>
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
+        <div className="hero-visual-wrap">
+          <div className="hero-glow" />
+
+          <div className="scanner-card card">
+            <div className="scanner-card-top">
+              <span className="scanner-pill">Safe to consume</span>
+              <span className="scanner-score">92/100</span>
+            </div>
+
+            <h3>Organic Tomato Sauce</h3>
+            <p>
+              Clean ingredients, no artificial colors, and a parent-friendly
+              score for a faster decision.
+            </p>
+
+            <div className="ingredient-list">
+              <span>Organic Tomatoes</span>
+              <span>Sea Salt</span>
+              <span>Olive Oil</span>
+              <span>Basil</span>
+            </div>
+          </div>
+
+          <div className="phone-mockup">
+            <div className="phone-notch" />
+            <div className="phone-screen">
+              <div className="scan-badge">Scan result</div>
+              <h4>Excellent choice</h4>
+              <p>Olive found no major additives in this product.</p>
+
+              <div className="score-ring">
+                <span>94</span>
+              </div>
+
+              <div className="phone-tags">
+                <span>Organic</span>
+                <span>Low PFAS</span>
+                <span>No MSG</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="floating-note card">
+            <span className="floating-note-title">Healthy family picks</span>
+            <p>Compare products and choose the cleaner option in seconds.</p>
+          </div>
+        </div>
       </div>
-
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
