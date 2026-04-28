@@ -1,3 +1,4 @@
+/* Main page layout and card styling for the Olive UI clone */
 .page-shell {
   width: min(100% - 32px, var(--container-width));
   margin: 16px auto;

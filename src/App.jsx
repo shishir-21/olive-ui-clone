@@ -10,10 +10,11 @@ import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
+    // page-shell makes the whole landing page feel like one clean card
     <div className="page-shell">
       <Navbar />
       <main className="page-main">
-        {/* Main landing page sections */}
+        {/* This is the main landing page flow for the Olive clone */}
         <Hero />
         <HowItWorks />
         <Benefits />
@@ -22,7 +23,7 @@ function App() {
         <Faq />
       </main>
 
-      {/* Footer CTA and bottom info */}
+      {/* Footer shows the final call to action and site bottom info */}
       <Footer />
     </div>
   );
