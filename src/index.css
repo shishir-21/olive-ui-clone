@@ -1,22 +1,13 @@
 :root {
-  --bg-main: #f7f4ee;
+  --bg-main: #fbf8ef;
   --bg-surface: #ffffff;
-  --bg-soft: #f2eadf;
-  --bg-dark: #1f4d3d;
-  --text-main: #19332c;
-  --text-soft: #5f6f68;
-  --text-light: #f7f8f5;
-  --border: #e5dccf;
-  --accent: #6d8f44;
-  --accent-dark: #456535;
-  --accent-soft: #dce7c8;
-  --warning: #d98a47;
-  --shadow-soft: 0 24px 60px rgba(39, 55, 45, 0.08);
-  --shadow-card: 0 14px 34px rgba(31, 77, 61, 0.08);
-  --radius-xl: 32px;
-  --radius-lg: 24px;
-  --radius-md: 18px;
-  --radius-sm: 999px;
+  --text-main: #192b22;
+  --text-soft: #617068;
+  --green-dark: #244b37;
+  --green: #6c8f42;
+  --green-soft: #e4edcf;
+  --border: #dde4d1;
+  --shadow-card: 0 18px 46px rgba(47, 69, 53, 0.1);
   --container-width: 1180px;
   --font-sans: Inter, "Segoe UI", Arial, sans-serif;
   color: var(--text-main);
@@ -41,7 +32,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: linear-gradient(180deg, #f8f6ef 0%, #f6f1e8 100%);
+  background: var(--bg-main);
   color: var(--text-main);
 }
 
