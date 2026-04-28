@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Scanner.css';
 
-const Scanner = () => {
+const Scanner = ({ onClose }) => {
   const [isScanning, setIsScanning] = useState(false);
   const [detectedProduct, setDetectedProduct] = useState(null);
 
@@ -26,6 +26,7 @@ const Scanner = () => {
         <img src="/images/barcode-image.webp" alt="Product background" />
         <div className="scanner-overlay"></div>
       </div>
+      <button className="close-button" onClick={onClose}>×</button>
       <div className="scan-box">
         <div className={`scan-line ${isScanning ? 'active' : ''}`}></div>
         {detectedProduct && (
