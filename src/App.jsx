@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
 import Pricing from "./components/Pricing";
+import Scanner from "./components/Scanner";
 import Testimonials from "./components/Testimonials";
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
       <Navbar />
       
       <main className="page-main">
+        {/* Scanner section */}
+        <Scanner />
+        
         {/* Landing page sections in order:
             1. Hero - Main headline and call to action
             2. HowItWorks - Three step explanation of how Olive works
