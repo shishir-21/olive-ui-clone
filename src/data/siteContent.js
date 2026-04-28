@@ -8,10 +8,10 @@ export const navLinks = [
 ];
 
 export const familyFaces = [
-  { name: "Megan", color: "#f0b49b" },
-  { name: "Robert", color: "#95b68b" },
-  { name: "Jane", color: "#d7c17d" },
-  { name: "Emily", color: "#b58acb" },
+  { name: "Megan", color: "#f0b49b", image: "/selfies/selfie-1.jpg" },
+  { name: "Robert", color: "#95b68b", image: "/selfies/selfie-2.jpg" },
+  { name: "Jane", color: "#d7c17d", image: "/selfies/selfie-3.jpg" },
+  { name: "Emily", color: "#b58acb", image: "/selfies/selfie-4.jpg" },
 ];
 
 export const groceryProducts = [

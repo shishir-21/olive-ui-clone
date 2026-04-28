@@ -18,10 +18,19 @@ const Hero = () => {
                 key={face.name}
                 style={{ "--face-color": face.color }}
                 title={face.name}
-              />
+              >
+                {/* Put selfie files in public/selfies with the names from siteContent.js */}
+                <img
+                  src={face.image}
+                  alt={`${face.name} selfie`}
+                  onError={(event) => {
+                    event.currentTarget.hidden = true;
+                  }}
+                />
+              </span>
             ))}
+            <span className="family-count">3k+</span>
           </div>
-          <strong>3k+</strong>
           <span>Trusted by thousands of healthy families</span>
         </div>
 

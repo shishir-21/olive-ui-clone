@@ -177,33 +177,44 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 18px;
   color: var(--text-soft);
-  font-size: 0.95rem;
-}
-
-.family-proof strong {
-  color: var(--text-main);
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .face-stack {
   display: flex;
 }
 
-.face-dot {
-  width: 38px;
-  height: 38px;
+.face-dot,
+.family-count {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
   margin-left: -10px;
-  border: 3px solid var(--bg-main);
+  overflow: hidden;
+  border: 3px solid #e7ebe3;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 38%, #fff7e7 0 18%, transparent 19%),
-    var(--face-color);
+  background: var(--face-color);
+  box-shadow: 0 4px 14px rgba(31, 45, 36, 0.12);
 }
 
 .face-dot:first-child {
   margin-left: 0;
+}
+
+.face-dot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.family-count {
+  background: #e7e9e6;
+  color: #89908a;
+  font-size: 1.25rem;
+  font-weight: 900;
 }
 
 .product-marquee {
