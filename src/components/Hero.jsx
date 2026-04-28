@@ -3,7 +3,7 @@ import HeroPhoneShowcase from "./HeroPhoneShowcase";
 
 // Hero section - the first thing visitors see when they land on the site
 // Shows trust proof, main headline, app button, and phone preview
-const Hero = ({ onOpenScanner }) => {
+const Hero = () => {
   return (
     <section className="section hero-section" id="top">
       <div className="hero-copy">
@@ -49,13 +49,6 @@ const Hero = ({ onOpenScanner }) => {
           </svg>
           Download for iOS
         </a>
-
-        <button
-          className="button button-secondary"
-          onClick={onOpenScanner}
-        >
-          Try Scanner Demo
-        </button>
 
         <HeroPhoneShowcase />
       </div>
