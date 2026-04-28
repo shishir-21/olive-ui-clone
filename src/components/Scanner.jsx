@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Scanner.css';
 
 const Scanner = () => {
+  const [isScanning, setIsScanning] = useState(false);
+  const [detectedProduct, setDetectedProduct] = useState(null);
+
+  const startScan = () => {
+    setIsScanning(true);
+    setDetectedProduct(null);
+    
+    // Simulate scanning delay
+    setTimeout(() => {
+      setIsScanning(false);
+      setDetectedProduct({
+        name: "Avocado",
+        score: 85,
+        status: "good"
+      });
+    }, 3000);
+  };
+
   return (
     <div className="scanner-container">
       <div className="scanner-background">
@@ -9,8 +27,24 @@ const Scanner = () => {
         <div className="scanner-overlay"></div>
       </div>
       <div className="scan-box">
-        <div className="scan-line"></div>
+        <div className={`scan-line ${isScanning ? 'active' : ''}`}></div>
+        {detectedProduct && (
+          <div className="detection-result">
+            <h3>{detectedProduct.name}</h3>
+            <p>Score: {detectedProduct.score}</p>
+            <span className={`status ${detectedProduct.status}`}>
+              {detectedProduct.status === 'good' ? 'Safe' : 'Caution'}
+            </span>
+          </div>
+        )}
       </div>
+      <button 
+        className="scan-button" 
+        onClick={startScan}
+        disabled={isScanning}
+      >
+        {isScanning ? 'Scanning...' : 'Scan Product'}
+      </button>
     </div>
   );
 };
