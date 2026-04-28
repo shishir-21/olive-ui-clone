@@ -5,6 +5,7 @@ import {
   warningTags,
 } from "../data/siteContent";
 
+// Benefits shows what Olive gives parents and why it matters
 const Benefits = () => {
   return (
     <section className="section" id="benefits">

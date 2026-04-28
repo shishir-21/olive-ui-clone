@@ -1,3 +1,4 @@
+// Footer shows the final call to action and the site bottom bar
 const Footer = () => {
   return (
     <footer className="footer-section">

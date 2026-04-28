@@ -1,5 +1,6 @@
 import { comparisonItems, pricingPlans } from "../data/siteContent";
 
+// Pricing compares Olive to others and shows plan options
 const Pricing = () => {
   return (
     <section className="section" id="pricing">

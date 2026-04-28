@@ -1,5 +1,6 @@
 import { testimonials } from "../data/siteContent";
 
+// Testimonials gives real quotes from happy users
 const Testimonials = () => {
   return (
     <section className="section">

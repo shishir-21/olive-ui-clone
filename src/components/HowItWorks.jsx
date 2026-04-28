@@ -1,5 +1,6 @@
 import { howItWorksSteps } from "../data/siteContent";
 
+// HowItWorks explains the app steps in a simple way
 const HowItWorks = () => {
   return (
     <section className="section" id="how-it-works">
