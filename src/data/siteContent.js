@@ -154,26 +154,26 @@ export const faqs = [
   {
     question: "What is the Food Scanner App and how does it work?",
     answer:
-      "Olive lets you scan a product barcode, review ingredient quality, and see a simple health score with safer recommendations.",
+      "Open Olive and scan any product barcode. The app instantly detects ingredients and shows you a safety score. You get clear health insights in seconds - no confusing ingredient lists.",
   },
   {
-    question: "How does Olive ensure accuracy?",
+    question: "How does Olive ensure accuracy of results?",
     answer:
-      "The app experience shown here is frontend only, but the design reflects Olive's focus on ingredient rules, data checks, and expert-backed guidance.",
+      "Olive compares each product against an extensive food database using expert-backed nutritional guidelines. Our scoring is designed by registered holistic health experts to filter out potentially dangerous ingredients.",
   },
   {
-    question: "Which products can I scan?",
+    question: "Which products can I scan with Olive?",
     answer:
-      "The landing page suggests grocery and packaged food products with barcodes, especially products parents buy often for the home.",
+      "You can scan most packaged grocery products with a barcode - from snacks and sauces to ice cream and milk. The app works best with products that have barcodes on supermarket shelves.",
   },
   {
-    question: "Can Olive match dietary preferences?",
+    question: "Can Olive work with my family's dietary needs?",
     answer:
-      "The UI highlights food values like organic, gluten-free, and low-PFAS options to show how personalized filtering could look.",
+      "Yes! Olive flags dietary-specific items like gluten-free, dairy-free, non-GMO, and organic options. You get personalized recommendations based on health values that matter to your family.",
   },
   {
-    question: "When will Android be available?",
+    question: "Is my data secure with Olive?",
     answer:
-      "The live site mentions Android availability as a common question, so this clone includes that FAQ item without implementing platform logic.",
+      "Your privacy matters to us. Olive uses secure data protection and never monetizes user data through ads or brand deals - keeping our recommendations always aligned with family health and safety.",
   },
 ];
