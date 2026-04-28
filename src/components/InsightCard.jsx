@@ -30,7 +30,7 @@ const InsightCard = () => {
       >
         <img src="/images/product-1.webp" alt="" className="stack-card back-left" />
         <img src="/images/product-5.webp" alt="" className="stack-card back-right" />
-        <img src="/images/product-3-details.webp" alt="Recommended product insight card" className="stack-card front" />
+        <img src="/images/insight-front.png" alt="Recommended product insight card" className="stack-card front" />
       </motion.div>
 
       <span className="insight-caption">{recipeSuggestions[1]}</span>
