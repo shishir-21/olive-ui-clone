@@ -1,46 +1,58 @@
+import { useEffect, useState } from "react";
+
 const heroProducts = [
   {
-    src: "/products/olive-product-5.png",
-    detail: "/products/olive-product-5-details.png",
-    alt: "Olive product scan preview",
+    id: 1,
+    name: "Product 1",
+    image: "/images/product-1.webp",
+    details: "/images/product-1-details.webp",
   },
   {
-    src: "/products/olive-product-2.png",
-    detail: "/products/olive-product-5-details.png",
-    alt: "Sea salt product preview",
+    id: 2,
+    name: "Product 2",
+    image: "/images/product-2.webp",
+    details: "/images/product-2-details.webp",
   },
   {
-    src: "/products/olive-product-4.png",
-    detail: "/products/olive-product-5-details.png",
-    alt: "Honey product preview",
+    id: 3,
+    name: "Product 3",
+    image: "/images/product-3.webp",
+    details: "/images/product-3-details.webp",
   },
   {
-    src: "/products/olive-product-3.png",
-    detail: "/products/olive-product-5-details.png",
-    alt: "Sparkling tonic product preview",
+    id: 4,
+    name: "Product 4",
+    image: "/images/product-4.webp",
+    details: "/images/product-4-details.webp",
   },
-];
-
-const sideProducts = [
-  "/products/olive-product-1.png",
-  "/products/olive-product-2.png",
-  "/products/olive-product-3.png",
-  "/products/olive-product-4.png",
-  "/products/olive-product-5.png",
-  "/products/olive-product-6.png",
-  "/products/olive-product-7.png",
-  "/products/olive-product-8.png",
 ];
 
 const HeroPhoneShowcase = () => {
-  const repeatedSideProducts = [...sideProducts, ...sideProducts];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const sideIndex = activeIndex + heroProducts.length;
+  const sideProducts = [...heroProducts, ...heroProducts, ...heroProducts];
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveIndex((index) => (index + 1) % heroProducts.length);
+    }, 2800);
+
+    return () => window.clearInterval(timer);
+  }, []);
 
   return (
-    <div className="hero-phone-stage" aria-label="Olive app product preview">
-      <div className="hero-side-loop" aria-hidden="true">
-        {repeatedSideProducts.map((src, index) => (
-          <span className="ghost-card" key={`${src}-${index}`}>
-            <img src={src} alt="" />
+    <div
+      className="hero-phone-stage"
+      style={{ "--side-index": sideIndex }}
+      aria-label="Olive app product preview"
+    >
+      <div className="hero-side-track" aria-hidden="true">
+        {sideProducts.map((product, index) => (
+          <span
+            className={index === sideIndex ? "ghost-card is-active" : "ghost-card"}
+            key={`${product.id}-${index}`}
+          >
+            <img src={product.image} alt="" />
           </span>
         ))}
       </div>
@@ -51,19 +63,19 @@ const HeroPhoneShowcase = () => {
         </div>
 
         <div className="hero-phone-window">
-          {/* Product image loop. */}
-          <div className="hero-phone-track">
+          {/* One index moves every product screen. */}
+          <div className="hero-phone-track" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
             {heroProducts.map((product) => (
-              <img src={product.src} alt={product.alt} key={product.alt} />
+              <img src={product.image} alt={product.name} key={product.id} />
             ))}
           </div>
         </div>
 
         <div className="hero-detail-window">
-          {/* Detail screen loop. */}
-          <div className="hero-detail-track">
+          {/* Details use the same index as the product. */}
+          <div className="hero-detail-track" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
             {heroProducts.map((product) => (
-              <img src={product.detail} alt="" key={`${product.alt}-detail`} />
+              <img src={product.details} alt={`${product.name} details`} key={`${product.id}-details`} />
             ))}
           </div>
         </div>

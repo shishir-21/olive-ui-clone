@@ -248,15 +248,14 @@
 
 .hero-phone-track {
   display: flex;
-  width: 400%;
   height: 100%;
-  animation: hero-phone-slide 12s ease-in-out infinite;
+  transition: transform 620ms ease;
 }
 
 .hero-phone-track img {
-  width: 25%;
+  width: 100%;
   height: 100%;
-  flex: 0 0 25%;
+  flex: 0 0 100%;
   object-fit: cover;
 }
 
@@ -272,60 +271,55 @@
 
 .hero-detail-track {
   display: flex;
-  width: 400%;
   height: 100%;
-  animation: hero-phone-slide 12s ease-in-out infinite;
+  transition: transform 620ms ease;
 }
 
 .hero-detail-track img {
-  width: 25%;
+  width: 100%;
   height: 100%;
-  flex: 0 0 25%;
+  flex: 0 0 100%;
   object-fit: cover;
   object-position: top center;
 }
 
-.hero-side-loop {
+.hero-side-track {
+  --hero-card-size: 112px;
+  --hero-card-gap: 36px;
+  --hero-card-step: calc(var(--hero-card-size) + var(--hero-card-gap));
   position: absolute;
   top: 116px;
   left: 50%;
   z-index: 1;
   display: flex;
   width: max-content;
-  gap: 36px;
-  transform: translateX(-50%);
-  animation: hero-side-loop 24s linear infinite;
+  gap: var(--hero-card-gap);
+  transform: translateX(calc((var(--side-index) * var(--hero-card-step) * -1) - (var(--hero-card-size) / 2)));
+  transition: transform 620ms ease;
 }
 
 .ghost-card {
-  width: 112px;
-  height: 112px;
+  width: var(--hero-card-size);
+  height: var(--hero-card-size);
   flex: 0 0 auto;
   overflow: hidden;
   border-radius: 24px;
   background: #ffffff;
   box-shadow: 0 16px 40px rgba(48, 65, 49, 0.12);
-  opacity: 0.42;
-  animation: ghost-float 8s ease-in-out infinite;
+  opacity: 0.34;
+  transform: scale(0.94);
+  transition: opacity 620ms ease, transform 620ms ease;
+}
+
+.ghost-card.is-active {
+  opacity: 0.6;
+  transform: scale(1);
 }
 
 .ghost-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.ghost-card:nth-child(2n) {
-  opacity: 0.58;
-  animation-delay: -1.5s;
-}
-
-.ghost-card:nth-child(3n) {
-  animation-delay: -3s;
-}
-
-.ghost-card:nth-child(4n) {
-  animation-delay: -4.5s;
 }
 
 .family-proof {
@@ -1156,53 +1150,6 @@
   }
 }
 
-@keyframes hero-phone-slide {
-  0%,
-  19% {
-    transform: translateX(0);
-  }
-
-  25%,
-  44% {
-    transform: translateX(-25%);
-  }
-
-  50%,
-  69% {
-    transform: translateX(-50%);
-  }
-
-  75%,
-  94% {
-    transform: translateX(-75%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes hero-side-loop {
-  from {
-    translate: 0;
-  }
-
-  to {
-    translate: -50%;
-  }
-}
-
-@keyframes ghost-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
 @keyframes phone-photo-slide {
   0%,
   42% {
@@ -1323,14 +1270,13 @@
     border-radius: 20px 20px 0 0;
   }
 
-  .hero-side-loop {
+  .hero-side-track {
+    --hero-card-size: 82px;
+    --hero-card-gap: 24px;
     top: 126px;
-    gap: 24px;
   }
 
   .ghost-card {
-    width: 82px;
-    height: 82px;
     border-radius: 18px;
   }
 
