@@ -1,4 +1,4 @@
-import { groceryProducts, howItWorksSteps, recipeSuggestions } from "../data/siteContent";
+import FeatureSection from "./FeatureSection";
 
 // HowItWorks section - shows the three simple steps of using Olive app
 // Each step has a visual panel so the page feels close to the live site
@@ -10,48 +10,7 @@ const HowItWorks = () => {
         <h2>How the Olive Food Scanner App Works</h2>
       </div>
 
-      <div className="work-stack work-stack--horizontal">
-        <article className="work-card work-card--horizontal work-card--scan">
-          <div className="scan-visual" aria-label="Barcode scanning avocado">
-            <img src="/images/barcode-image.webp" alt="Avocado with barcode sticker" />
-            <span className="scan-corner scan-corner-top-left" aria-hidden="true" />
-            <span className="scan-corner scan-corner-top-right" aria-hidden="true" />
-            <span className="scan-corner scan-corner-bottom-left" aria-hidden="true" />
-            <span className="scan-corner scan-corner-bottom-right" aria-hidden="true" />
-          </div>
-          <div>
-            <h3>{howItWorksSteps[0].title}</h3>
-            <p>{howItWorksSteps[0].description}</p>
-          </div>
-        </article>
-
-        <article className="work-card work-card--horizontal work-card--data">
-          <div className="mini-product-grid">
-            {groceryProducts.slice(0, 10).map((product) => (
-              <div className="mini-product" key={product}>
-                <span>{product.slice(0, 2)}</span>
-              </div>
-            ))}
-          </div>
-          <div>
-            <span className="safe-pill">Safe to consume</span>
-            <h3>{howItWorksSteps[1].title}</h3>
-            <p>{howItWorksSteps[1].description}</p>
-          </div>
-        </article>
-
-        <article className="work-card work-card--horizontal work-card--recipes">
-          <div className="recipe-rail">
-            {recipeSuggestions.map((recipe) => (
-              <span key={recipe}>{recipe}</span>
-            ))}
-          </div>
-          <div>
-            <h3>{howItWorksSteps[2].title}</h3>
-            <p>{howItWorksSteps[2].description}</p>
-          </div>
-        </article>
-      </div>
+      <FeatureSection />
     </section>
   );
 };
