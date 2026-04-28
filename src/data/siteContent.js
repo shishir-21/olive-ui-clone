@@ -34,3 +34,106 @@ export const howItWorksSteps = [
       "Get a simple safety summary and better choices for your family in seconds.",
   },
 ];
+
+export const insightCards = [
+  {
+    title: "Achieve Nutritional Clarity",
+    description:
+      "Olive breaks down ingredients into simple language so parents can understand what they are buying.",
+    points: [
+      "Scores products out of 100",
+      "Highlights positives and negatives",
+      "Uses expert-backed health rules",
+    ],
+  },
+  {
+    title: "Proactive Ingredient Filtering",
+    description:
+      "Spot controversial additives early and avoid products that do not fit your food values.",
+    points: [
+      "Flags artificial colors",
+      "Calls out seed oils and toxins",
+      "Supports safer repeat purchases",
+    ],
+  },
+];
+
+export const goodTags = [
+  "Cholesterol-Free",
+  "High Fibre",
+  "No MSG",
+  "Organic Ingredients",
+  "Low PFAS",
+  "Plant-Based",
+  "Gluten-Free",
+  "100% Whole Grain",
+];
+
+export const warningTags = [
+  "Artificial Colors",
+  "Sodium Nitrite",
+  "TBHQ",
+  "Carrageenan",
+  "Aspartame",
+  "Palm Oil",
+  "Sodium Benzoate",
+  "Potassium Bromate",
+];
+
+export const outcomes = [
+  "Feel more in control of your family's health choices.",
+  "Get better product suggestions without extra research.",
+  "Build healthier shopping habits over time.",
+];
+
+export const testimonials = [
+  {
+    quote:
+      "Olive has completely changed the way I shop for my family. I feel confident knowing exactly what is in our food.",
+    name: "Megan L.",
+  },
+  {
+    quote:
+      "Meal planning used to be stressful. Now I scan, get recommendations, and feel great about what my kids are eating.",
+    name: "Tina B.",
+  },
+  {
+    quote:
+      "After one week of using Olive, I felt much more in control and far less confused at the grocery store.",
+    name: "Lila M.",
+  },
+];
+
+export const comparisonItems = [
+  "Detailed product breakdown",
+  "Comprehensive ingredient data",
+  "Seed oil free dining map",
+  "Certified lab-testing data",
+  "Healthier food suggestions",
+];
+
+export const pricingPlans = [
+  {
+    name: "Monthly",
+    price: "$14.99",
+    period: "/monthly",
+    highlight: false,
+    features: [
+      "Unlimited scans",
+      "Unlimited database searches",
+      "Comprehensive lab-testing data",
+    ],
+  },
+  {
+    name: "Yearly",
+    price: "$69.99",
+    period: "/yearly",
+    highlight: true,
+    badge: "Best value",
+    features: [
+      "Everything in monthly plan",
+      "Get 7 months free",
+      "Save 60% on full-year access",
+    ],
+  },
+];
