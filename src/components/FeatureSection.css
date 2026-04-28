@@ -1,0 +1,245 @@
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: min(100%, 1152px);
+  margin: 0 auto;
+}
+
+.feature-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-height: 360px;
+  height: 100%;
+  padding: 24px;
+  border: 1px solid #e5ebdf;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #f5f8f3 0%, #f2f6f1 100%);
+  box-shadow: 0 8px 24px rgba(45, 60, 50, 0.05);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 16px 34px rgba(45, 60, 50, 0.1);
+}
+
+.feature-card h3 {
+  margin: 0;
+  color: #1f3d2b;
+  font-size: 1.16rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #5e6860;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.scan-figure {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 148px;
+  border-radius: 16px;
+  background: #edf2ea;
+  overflow: hidden;
+}
+
+.scan-figure img {
+  width: min(100%, 154px);
+  filter: drop-shadow(0 8px 14px rgba(30, 42, 33, 0.2));
+  z-index: 1;
+}
+
+.scan-line-feature {
+  position: absolute;
+  left: 14%;
+  width: 72%;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(41, 88, 63, 0), #29583f, rgba(41, 88, 63, 0));
+  box-shadow: 0 0 14px rgba(43, 97, 68, 0.4);
+  animation: scan-line-loop 2.8s infinite ease-in-out;
+}
+
+.scan-corner-feature {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: #1f3d2b;
+  opacity: 0.72;
+}
+
+.scan-corner-feature.tl {
+  top: 14px;
+  left: 14px;
+  border-top: 3px solid;
+  border-left: 3px solid;
+  border-top-left-radius: 10px;
+}
+
+.scan-corner-feature.tr {
+  top: 14px;
+  right: 14px;
+  border-top: 3px solid;
+  border-right: 3px solid;
+  border-top-right-radius: 10px;
+}
+
+.scan-corner-feature.bl {
+  bottom: 14px;
+  left: 14px;
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  border-bottom-left-radius: 10px;
+}
+
+.scan-corner-feature.br {
+  right: 14px;
+  bottom: 14px;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+  border-bottom-right-radius: 10px;
+}
+
+.scan-particle-feature {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(79, 138, 106, 0.7);
+  box-shadow: 0 0 10px rgba(79, 138, 106, 0.6);
+  animation: particle-float 3.6s infinite ease-in-out;
+}
+
+.analysis-focus {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 148px;
+}
+
+.analysis-card {
+  position: absolute;
+  width: 68px;
+  height: 88px;
+  border-radius: 13px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(42, 58, 47, 0.2);
+}
+
+.analysis-card.center {
+  z-index: 2;
+  width: 74px;
+  height: 96px;
+}
+
+.analysis-card.side-left {
+  transform: translateX(-56px) scale(0.92);
+  filter: blur(1.2px) brightness(0.98);
+  opacity: 0.62;
+}
+
+.analysis-card.side-right {
+  transform: translateX(56px) scale(0.92);
+  filter: blur(1.2px) brightness(0.98);
+  opacity: 0.62;
+}
+
+.analysis-pill {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #dcebdc;
+  color: #2b5c41;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.insight-stack {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 148px;
+}
+
+.stack-card {
+  position: absolute;
+  width: 84px;
+  height: 110px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 12px 26px rgba(34, 45, 38, 0.26);
+}
+
+.stack-card.back-left {
+  transform: translateX(-26px) rotate(-11deg);
+  opacity: 0.85;
+}
+
+.stack-card.back-right {
+  transform: translateX(26px) rotate(11deg);
+  opacity: 0.85;
+}
+
+.stack-card.front {
+  z-index: 2;
+  transform: rotate(-1deg);
+}
+
+.insight-caption {
+  margin-top: -2px;
+  color: #727a74;
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+@keyframes scan-line-loop {
+  0% {
+    top: 22%;
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 78%;
+    opacity: 0.35;
+  }
+}
+
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.1);
+    opacity: 0.95;
+  }
+}
+
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .feature-card {
+    min-height: 340px;
+    padding: 20px;
+  }
+}
