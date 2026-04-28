@@ -1,40 +1,38 @@
 import { testimonials } from "../data/siteContent";
 
-// Testimonials section - shows real customer reviews and success stories
-// Displays 5-star ratings with customer quotes about their experiences using Olive
+// Testimonials section - shows real parent quotes like the live Olive page
 const Testimonials = () => {
   return (
     <section className="section">
-      {/* Section header introducing the testimonials */}
-      <div className="section-header">
-        <span className="eyebrow">Real mothers, real results</span>
-        <h2>Parents trust Olive for healthier decisions</h2>
+      {/* Section header uses the same two-line promise as the original page */}
+      <div className="section-header center-header">
+        <h2>
+          Real Mothers
+          <br />
+          Real Results
+        </h2>
         <p className="section-subtitle">
-          Join thousands of families who use Olive to shop with more clarity and
-          less stress.
+          Join thousands of satisfied parents who trust Olive to help them make
+          healthier choices for their families.
         </p>
       </div>
 
-      {/* Grid of testimonial cards - Each card shows stars, quote, and customer name */}
+      {/* Each card has a simple avatar, quote, and parent name */}
       <div className="testimonials-grid">
         {testimonials.map((item) => (
           <article className="testimonial-card card" key={item.name}>
-            {/* Five star rating */}
-            <div className="stars">★★★★★</div>
-            {/* Customer quote */}
+            <div className="testimonial-avatar">{item.name.slice(0, 1)}</div>
             <p>"{item.quote}"</p>
-            {/* Customer name */}
             <strong>{item.name}</strong>
           </article>
         ))}
       </div>
 
-      {/* Link to read all customer reviews on App Store */}
       <a
         className="reviews-link"
         href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
       >
-        Read all 3,147+ reviews
+        read all 3,147+ reviews
       </a>
     </section>
   );

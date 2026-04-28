@@ -6,19 +6,24 @@ import {
 } from "../data/siteContent";
 
 // Benefits section - shows the health benefits and real outcomes of using Olive
-// Left side: two insight cards explaining nutritional clarity and ingredient filtering
-// Right side: product score example showing how Olive rates food
+// It mirrors the live page with benefit text, scoring UI, and ingredient chips
 const Benefits = () => {
   return (
     <section className="section" id="benefits">
-      {/* Section header explaining what Olive benefits do */}
-      <div className="section-header">
-        <span className="eyebrow">Health benefits</span>
-        <h2>Ingredient clarity that busy families can actually use</h2>
+      {/* Section header explaining why Olive helps families */}
+      <div className="section-header center-header">
+        <h2>Health Benefits of Using Olive</h2>
         <p className="section-subtitle">
-          Olive helps parents understand product quality, avoid harmful
-          ingredients, and make healthier food choices faster.
+          Olive proactively flags harmful ingredients and offers personalized
+          recommendations, empowering you to make better choices for your
+          family's health.
         </p>
+        <a
+          className="button button-primary"
+          href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
+        >
+          Download for iOS
+        </a>
       </div>
 
       {/* Two column layout: cards on left, score example on right */}
@@ -44,10 +49,13 @@ const Benefits = () => {
           <article className="score-panel card">
             <div className="score-panel-top">
               <div>
-                <span className="mini-label">Food score</span>
+                <span className="mini-label">Product score</span>
                 <h3>Straus Ice Cream</h3>
               </div>
-              <div className="big-score">88</div>
+              <div className="big-score">
+                <strong>90</strong>
+                <span>/100</span>
+              </div>
             </div>
 
             {/* Green tags showing positive ingredients and properties */}
@@ -73,7 +81,7 @@ const Benefits = () => {
 
           <article className="outcomes-card card">
             <span className="mini-label">Real family outcomes</span>
-            <h3>Feel more confident every time you shop</h3>
+            <h3>Real Health Outcomes for Your Family</h3>
             <ul>
               {outcomes.map((item) => (
                 <li key={item}>{item}</li>

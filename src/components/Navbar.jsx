@@ -1,7 +1,7 @@
 import { navLinks } from "../data/siteContent";
 
 // Navbar component - the top navigation bar visible on all pages
-// Shows Olive logo, navigation menu, sign in link, and download button
+// Shows Olive logo, live-site navigation links, sign in link, and app button
 const Navbar = () => {
   return (
     <header className="navbar">
@@ -13,6 +13,7 @@ const Navbar = () => {
 
       {/* Main navigation menu links */}
       <nav className="nav-links" aria-label="Main navigation">
+        <span className="nav-group-label">Solutions</span>
         {navLinks.map((link) => (
           <a key={link.label} href={link.href}>
             {link.label}

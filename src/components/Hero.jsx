@@ -1,98 +1,75 @@
-import { heroHighlights, trustStats } from "../data/siteContent";
+import { familyFaces, groceryProducts } from "../data/siteContent";
+import HeroPhoneShowcase from "./HeroPhoneShowcase";
 
 // Hero section - the first thing visitors see when they land on the site
-// Shows main headline, description, and call-to-action buttons
+// Shows trust proof, main headline, app button, and moving grocery product cards
 const Hero = () => {
+  // Duplicate products so the strip can look full like the original page
+  const repeatedProducts = [...groceryProducts, ...groceryProducts];
+
   return (
     <section className="section hero-section" id="top">
-      <div className="hero-layout">
-        {/* Left side - text content and buttons */}
-        <div className="hero-copy">
-          <span className="eyebrow">Discover Olive</span>
-          <h1>The Safest Way to Shop for Groceries</h1>
-          <p className="section-subtitle">
-            Use the Olive Food Scanner App to instantly eliminate harmful ingredients from your family's diet and get expert-backed food insights.
-          </p>
-
-          <div className="hero-actions">
-            {/* Main download button and secondary "learn more" button */}
-            <a
-              className="button button-primary"
-              href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
-            >
-              Get Olive
-            </a>
-            <a className="button button-secondary" href="#how-it-works">
-              See how it works
-            </a>
-          </div>
-
-          {/* Three main features that make Olive special */}
-          <ul className="hero-highlights">
-            {heroHighlights.map((item) => (
-              <li key={item}>{item}</li>
+      <div className="hero-copy">
+        {/* Small family faces and 3k+ text match the top proof area on Olive */}
+        <div className="family-proof" aria-label="Trusted by thousands of healthy families">
+          <div className="face-stack">
+            {familyFaces.map((face) => (
+              <span
+                className="face-dot"
+                key={face.name}
+                style={{ "--face-color": face.color }}
+                title={face.name}
+              >
+                {/* Put selfie files in public/selfies with the names from siteContent.js */}
+                <img
+                  src={face.image}
+                  alt={`${face.name} selfie`}
+                  onError={(event) => {
+                    event.currentTarget.hidden = true;
+                  }}
+                />
+              </span>
             ))}
-          </ul>
-
-          {/* Social proof - statistics showing trust and scale */}
-          <div className="trust-strip">
-            {trustStats.map((stat) => (
-              <div className="trust-item" key={stat.label}>
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-              </div>
-            ))}
+            <span className="family-count">3k+</span>
           </div>
+          <span>Trusted by thousands of healthy families</span>
         </div>
 
-        {/* Right side - visual mockups showing the app in action */}
-        <div className="hero-visual-wrap">
-          <div className="hero-glow" />
+        <h1>The Safest Way to Shop for Groceries</h1>
+        <p className="section-subtitle">
+          Use the Olive Food Scanner App to Instantly Eliminate Harmful
+          Ingredients from Your Family's Diet and Get Expert-Backed Food
+          Insights
+        </p>
 
-          <div className="scanner-card card">
-            <div className="scanner-card-top">
-              <span className="scanner-pill">Safe to consume</span>
-              <span className="scanner-score">92/100</span>
-            </div>
+        <a
+          className="button button-primary"
+          href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
+        >
+          <svg className="apple-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15.1 6c1.5.1 3.5 1 4.7 2.6-.9.5-2.5 1.3-2.5 3.8 0 2.4 1.8 3 2.7 3.3-.3 2.4-3 6.3-5.3 6.3-.8 0-1.3-.1-2-.3-.5-.2-.8-.2-1.2-.2-.5 0-.9.1-1.7.3-.6.1-1 .2-1.5.2C5.5 22 3 16.9 3 12.9 3 9.1 4.8 6 8.3 6c.7 0 1.3.2 2.2.7.7.3.9.4 1 .4.1 0 .3-.1 1.1-.5 1-.5 1.8-.7 2.5-.6Z" />
+            <path d="M14 1a1 1 0 0 1 1 1 3 3 0 0 1-3 3 1 1 0 0 1-1-1 3 3 0 0 1 3-3Z" />
+          </svg>
+          Download for iOS
+        </a>
 
-            <h3>Organic Tomato Sauce</h3>
-            <p>
-              Clean ingredients, no artificial colors, and a parent-friendly
-              score for a faster decision.
-            </p>
+        <HeroPhoneShowcase />
+      </div>
 
-            <div className="ingredient-list">
-              <span>Organic Tomatoes</span>
-              <span>Sea Salt</span>
-              <span>Olive Oil</span>
-              <span>Basil</span>
-            </div>
+      {/* Product rows create the grocery wall under the hero heading */}
+      <div className="product-marquee" aria-label="Grocery products Olive can scan">
+        {[0, 1, 2].map((row) => (
+          <div className="product-row" key={row}>
+            {repeatedProducts.map((product, index) => (
+              <article className="product-tile" key={`${row}-${product}-${index}`}>
+                <div className="product-pack">
+                  <span>{product.slice(0, 2)}</span>
+                </div>
+                <p>{product}</p>
+              </article>
+            ))}
           </div>
-
-          <div className="phone-mockup">
-            <div className="phone-notch" />
-            <div className="phone-screen">
-              <div className="scan-badge">Scan result</div>
-              <h4>Excellent choice</h4>
-              <p>Olive found no major additives in this product.</p>
-
-              <div className="score-ring">
-                <span>94</span>
-              </div>
-
-              <div className="phone-tags">
-                <span>Organic</span>
-                <span>Low PFAS</span>
-                <span>No MSG</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="floating-note card">
-            <span className="floating-note-title">Healthy family picks</span>
-            <p>Compare products and choose the cleaner option in seconds.</p>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

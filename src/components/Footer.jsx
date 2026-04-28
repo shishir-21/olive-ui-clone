@@ -1,55 +1,60 @@
-// Footer component - shows the final call to action and bottom navigation
 import { footerLinks } from "../data/siteContent";
 
-// Footer section appears at the bottom of the page with:
-// - Final CTA (Call to Action) to sign up
-// - Brand logo and links section
-// - Copyright information
+// Footer component - shows the final CTA, footer links, email form, and policies
 const Footer = () => {
   return (
     <footer className="footer-section">
-      {/* Final call to action section - encourages users to sign up */}
-      <section className="final-cta card">
-        <div>
-          <span className="eyebrow">100% independent. Always.</span>
-          <h2>Protect your family from hidden toxins</h2>
-          <p className="section-subtitle">
-            Olive never needs brand deals or ads in this UI concept. The design
-            stays focused on trust, food safety, and family-first decisions.
-          </p>
+      {/* Final call to action uses the same promise as the live Olive footer */}
+      <section className="footer-cta">
+        <h2>Keep your family safe with Olive</h2>
+        <div className="footer-benefits">
+          <span>Effortless food scanning</span>
+          <span>Peace of mind for parents</span>
+          <span>Healthy product recommendations</span>
         </div>
-
-        {/* Main sign up button - primary action */}
         <a
           className="button button-primary"
-          href="https://signup.oliveapp.com/olive-onboarding/"
+          href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
         >
-          Sign up for Olive today
+          Download for iOS
         </a>
       </section>
 
-      {/* Footer navigation bar with logo and links */}
       <div className="footer-bar">
-        {/* Logo link back to top */}
         <a className="brand" href="#top" aria-label="Olive home">
           <span className="brand-mark">O</span>
           <span>Olive</span>
         </a>
 
-        {/* List of helpful footer links - Blog, Contact, Privacy, etc */}
+        {/* Link groups match the Explore and About columns from Olive */}
         <div className="footer-links">
-          {footerLinks.map((item) => (
-            <a key={item.label} href={item.href}>
-              {item.label}
-            </a>
+          {footerLinks.map((group) => (
+            <div className="footer-link-group" key={group.title}>
+              <h3>{group.title}</h3>
+              {group.links.map((item) => (
+                <a key={item.label} href={item.href}>
+                  {item.label}
+                </a>
+              ))}
+            </div>
           ))}
+
+          <div className="footer-link-group">
+            <h3>Subscribe</h3>
+            <p>Get the latest lab testing data sent directly to your inbox.</p>
+            <form className="subscribe-form">
+              <input aria-label="Email address" placeholder="Email address" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
         </div>
       </div>
 
-      {/* Copyright and description text at the very bottom */}
       <div className="footer-copy">
-        <span>© 2026 Olive Inc.</span>
-        <span>Designed as a frontend clone for Olive app landing page.</span>
+        <span>Copyright 2026 Olive Inc.</span>
+        <a href="https://www.oliveapp.com/terms-of-service">Terms of Service</a>
+        <a href="https://www.oliveapp.com/privacy-policy">Privacy Policy</a>
+        <a href="https://www.oliveapp.com/refund-policy">Refund Policy</a>
       </div>
     </footer>
   );
