@@ -1,10 +1,14 @@
-// Footer shows the final call to action and the site bottom bar
+// Footer component - shows the final call to action and bottom navigation
 import { footerLinks } from "../data/siteContent";
 
-// Footer shows the final call to action and the site bottom text links
+// Footer section appears at the bottom of the page with:
+// - Final CTA (Call to Action) to sign up
+// - Brand logo and links section
+// - Copyright information
 const Footer = () => {
   return (
     <footer className="footer-section">
+      {/* Final call to action section - encourages users to sign up */}
       <section className="final-cta card">
         <div>
           <span className="eyebrow">100% independent. Always.</span>
@@ -15,6 +19,7 @@ const Footer = () => {
           </p>
         </div>
 
+        {/* Main sign up button - primary action */}
         <a
           className="button button-primary"
           href="https://signup.oliveapp.com/olive-onboarding/"
@@ -23,12 +28,15 @@ const Footer = () => {
         </a>
       </section>
 
+      {/* Footer navigation bar with logo and links */}
       <div className="footer-bar">
+        {/* Logo link back to top */}
         <a className="brand" href="#top" aria-label="Olive home">
           <span className="brand-mark">O</span>
           <span>Olive</span>
         </a>
 
+        {/* List of helpful footer links - Blog, Contact, Privacy, etc */}
         <div className="footer-links">
           {footerLinks.map((item) => (
             <a key={item.label} href={item.href}>
@@ -38,6 +46,7 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Copyright and description text at the very bottom */}
       <div className="footer-copy">
         <span>© 2026 Olive Inc.</span>
         <span>Designed as a frontend clone for Olive app landing page.</span>
