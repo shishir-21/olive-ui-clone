@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { howItWorksSteps, recipeSuggestions } from "../data/siteContent";
+import { howItWorksSteps } from "../data/siteContent";
 
 const reveal = {
   hidden: { opacity: 0, y: 40 },
@@ -21,7 +21,7 @@ const InsightCard = () => {
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
     >
-      <h3>{howItWorksSteps[2].title}</h3>
+      <h3 className="insight-title">{howItWorksSteps[2].title}</h3>
 
       <motion.div
         className="insight-stack"
@@ -33,7 +33,6 @@ const InsightCard = () => {
         <img src="/images/insight-front.png" alt="Recommended product insight card" className="stack-card front" />
       </motion.div>
 
-      <span className="insight-caption">{recipeSuggestions[1]}</span>
       <p>{howItWorksSteps[2].description}</p>
     </motion.article>
   );

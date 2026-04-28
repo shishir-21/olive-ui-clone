@@ -157,12 +157,26 @@
   width: max-content;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   padding: 7px 12px;
   border-radius: 999px;
   background: #dcebdc;
   color: #2b5c41;
   font-size: 0.8rem;
   font-weight: 600;
+}
+
+.analysis-pill-icon {
+  display: grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  border-radius: 50%;
+  background: #809b87;
+  color: #f3f6f2;
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .insight-stack {
@@ -196,11 +210,9 @@
   transform: rotate(-1deg);
 }
 
-.insight-caption {
-  margin-top: -2px;
-  color: #727a74;
-  font-size: 0.82rem;
-  text-align: center;
+.insight-title {
+  font-size: 1.02rem;
+  white-space: nowrap;
 }
 
 @keyframes scan-line-loop {

@@ -76,7 +76,12 @@ const AnalysisCard = () => {
         })}
       </div>
 
-      <span className="analysis-pill">Safe to consume</span>
+      <span className="analysis-pill">
+        <span className="analysis-pill-icon" aria-hidden="true">
+          ✓
+        </span>
+        Safe to consume
+      </span>
       <p>{howItWorksSteps[1].description}</p>
     </motion.article>
   );

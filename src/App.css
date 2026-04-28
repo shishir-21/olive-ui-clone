@@ -51,6 +51,28 @@
   color: #1f3d2b;
 }
 
+.how-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.how-title h2 {
+  display: grid;
+  gap: 6px;
+  text-align: left;
+}
+
+.how-title h2 span {
+  display: block;
+}
+
+.how-title img {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+}
+
 .section h3 {
   font-size: clamp(1.35rem, 2vw, 2rem);
   line-height: 1.08;
@@ -1390,6 +1412,15 @@
   .testimonial-card,
   .pricing-card {
     padding: 22px;
+  }
+
+  .how-title {
+    gap: 14px;
+  }
+
+  .how-title img {
+    width: 52px;
+    height: 52px;
   }
 
   .scan-visual {

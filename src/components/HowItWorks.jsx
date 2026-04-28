@@ -7,7 +7,13 @@ const HowItWorks = () => {
     <section className="section" id="how-it-works">
       {/* Section title follows the short heading used on Olive */}
       <div className="section-header center-header">
-        <h2>How the Olive Food Scanner App Works</h2>
+        <div className="how-title">
+          <h2>
+            <span>How the Olive Food</span>
+            <span>Scanner App Works</span>
+          </h2>
+          <img src="/images/avocado-icon.png" alt="" aria-hidden="true" />
+        </div>
       </div>
 
       <FeatureSection />
