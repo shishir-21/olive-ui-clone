@@ -1,33 +1,34 @@
+import { navLinks } from "../data/siteContent";
+
 const Navbar = () => {
   return (
-    <nav style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      padding: "20px 40px"
-    }}>
-      
-      <h2 style={{ color: "green" }}>Olive</h2>
+    <header className="navbar">
+      <a className="brand" href="#top" aria-label="Olive home">
+        <span className="brand-mark">O</span>
+        <span>Olive</span>
+      </a>
 
-      <div style={{ display: "flex", gap: "25px" }}>
-        <a href="#">Solutions</a>
-        <a href="#">Features</a>
-        <a href="#">Pricing</a>
-        <a href="#">Blog</a>
+      <nav className="nav-links" aria-label="Main navigation">
+        {navLinks.map((link) => (
+          <a key={link.label} href={link.href}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div className="nav-actions">
+        <a className="nav-signin" href="https://www.oliveapp.com/sign-in">
+          Sign in
+        </a>
+        <a
+          className="button button-primary"
+          href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
+        >
+          Get Olive
+        </a>
       </div>
+    </header>
+  );
+};
 
-      <button style={{
-        background: "green",
-        color: "white",
-        padding: "10px 20px",
-        border: "none",
-        borderRadius: "20px"
-      }}>
-        Get Olive →
-      </button>
-
-    </nav>
-  )
-}
-
-export default Navbar
+export default Navbar;
