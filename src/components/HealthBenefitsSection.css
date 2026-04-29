@@ -1,345 +1,331 @@
-/* Olive "Health Benefits" redesign */
-
-.olive-health-hero {
-  width: 100%;
-  min-height: 560px;
-  background: linear-gradient(180deg, #3e6b4f 0%, #345f45 100%);
-  position: relative;
-  overflow: hidden;
+/* ===== GLOBAL BACKGROUND ===== */
+body {
+  background: #f3efe9;
 }
 
-.olive-health-hero::before {
-  content: "";
-  position: absolute;
-  inset: -120px -80px auto -80px;
-  height: 340px;
-  background: radial-gradient(
-    circle at 30% 40%,
-    rgba(255, 255, 255, 0.14),
-    rgba(255, 255, 255, 0) 60%
-  );
-  pointer-events: none;
+.olive-benefits-wrapper {
+  padding-bottom: 20px;
+}
+
+/* ===== HERO WRAPPER ===== */
+.olive-hero-wrapper {
+  background: #3f6f4f;
+  padding-bottom: 152px; /* space for overlap card */
+}
+
+/* ===== HERO ===== */
+.olive-health-hero {
+  padding: 120px 0 80px;
+  color: white;
 }
 
 .olive-health-hero-inner {
-  width: min(100% - 40px, 1200px);
-  margin: 0 auto;
-  padding: 112px 0 96px;
-  position: relative;
-  z-index: 1;
+  width: min(92%, 1100px);
+  margin: auto;
 }
 
 .olive-health-hero-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.9fr;
-  gap: 40px;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
   align-items: center;
 }
 
 .olive-health-hero-left h2 {
-  margin: 0;
-  color: #ffffff;
+  font-size: clamp(42px, 5vw, 60px);
   font-weight: 700;
-  font-size: clamp(2.95rem, 5.2vw, 4.1rem);
-  line-height: 0.96;
-  letter-spacing: -0.6px;
-}
-
-.olive-health-hero-right {
-  display: grid;
-  justify-items: start;
-  gap: 18px;
+  line-height: 1.1;
 }
 
 .olive-health-hero-right p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 1.02rem;
-  line-height: 1.55;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.9);
 }
 
 .olive-health-ios-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: #ffffff;
+  display: inline-block;
+  padding: 12px 22px;
+  background: white;
   color: #1f3d2b;
   border-radius: 999px;
-  padding: 12px 24px; /* px-6 py-3 */
-  font-weight: 900;
+  font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-  transform: translateY(0);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: 0.2s;
 }
 
 .olive-health-ios-btn:hover {
-  transform: scale(1.02);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
+/* ===== OVERLAP SECTION ===== */
 .olive-nutrition-wrap {
-  /* Overlap the hero */
-  margin-top: -128px;
-  padding-bottom: 80px;
+  margin-top: -126px; /* overlap amount */
   position: relative;
-  z-index: 2;
+  z-index: 5;
+  margin-bottom: 28px; /* gap before next slide */
 }
 
+/* ===== CARD ===== */
 .olive-nutrition-card {
-  width: min(100% - 40px, 1200px);
-  margin: 0 auto;
-  background: #f5faf6;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  width: min(92%, 1100px);
+  margin: auto;
+  background: #f5f7f4;
+  border-radius: 28px;
+  padding: 48px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.08);
 }
 
+/* ===== GRID ===== */
 .olive-nutrition-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
 }
 
+/* ===== LEFT ===== */
 .olive-nutrition-left h3 {
-  margin: 0;
-  font-size: 1.55rem;
-  font-weight: 900;
-  letter-spacing: -0.2px;
+  font-size: 32px;
   color: #1f3d2b;
-}
-
-.olive-nutrition-left p {
-  margin: 10px 0 16px;
-  color: #6b7280;
-  line-height: 1.65;
-  font-size: 0.98rem;
+  margin-bottom: 24px;
+  font-weight: 800;
 }
 
 .olive-benefits-bullets {
   list-style: none;
-  margin: 0;
   padding: 0;
-  display: grid;
-  gap: 12px;
 }
 
 .olive-benefits-bullets li {
-  display: grid;
-  grid-template-columns: 22px 1fr;
-  gap: 12px;
-  align-items: start;
+  margin-bottom: 16px;
+  font-weight: 600;
+  display: flex;
+  gap: 10px;
+  color: #2f3e34;
 }
 
 .olive-benefits-check {
+  background: #1f3d2b;
+  color: white;
+  border-radius: 50%;
   width: 22px;
   height: 22px;
-  border-radius: 999px;
-  background: #1f3d2b;
-  display: grid;
-  place-items: center;
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 14px;
-  margin-top: 2px;
-  box-shadow: 0 12px 26px rgba(31, 61, 43, 0.14);
-}
-
-.olive-benefits-bullets strong {
-  color: #111827;
-  font-weight: 800;
-}
-
-.olive-nutrition-product {
-  border-radius: 22px;
-  padding: 18px 18px 20px;
-  background: #d3e7da;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
-}
-
-.olive-mini-pack {
-  width: 100%;
-  display: grid;
-  place-items: center;
-}
-
-.olive-mini-pack img {
-  width: min(100%, 240px);
-  height: 112px;
-  object-fit: cover;
-  border-radius: 22px;
-  background: #eaf4ec;
-  box-shadow: 0 10px 22px rgba(24, 54, 36, 0.1);
-}
-
-.olive-mini-scorebar {
-  margin: 14px 0 14px;
-  background: rgba(255, 255, 255, 0.55);
-  border-radius: 16px;
-  padding: 10px 14px;
-  display: grid;
-  grid-template-columns: 54px 1fr;
-  gap: 12px;
-  align-items: center;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.04);
-}
-
-.olive-mini-scorebar-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #ffffff;
-  display: grid;
-  place-items: center;
-}
-
-.olive-mini-scorebar-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.olive-mini-scorebar-title {
-  font-weight: 900;
-  color: #111827;
-  letter-spacing: -0.2px;
-}
-
-.olive-mini-scorebar-line {
-  margin-top: 3px;
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
-}
-
-.olive-mini-scorebar-score {
-  font-weight: 900;
-  color: #111827;
-}
-
-.olive-mini-scorebar-rating {
-  color: #6b7280;
-  font-weight: 800;
-  font-size: 0.92rem;
-}
-
-.olive-mini-tagsgrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.olive-mini-panel {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 18px;
-  padding: 12px 12px 14px;
-}
-
-.olive-mini-panel-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+}
+
+/* ===== RIGHT PRODUCT CARD (FIXED) ===== */
+.olive-nutrition-product {
+  background: linear-gradient(180deg, #cfe2d5, #bcd6c7);
+  padding: 32px 24px 40px;
+  border-radius: 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== IMAGE ===== */
+.olive-mini-pack {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 220px;
+  margin-bottom: 28px;
+}
+
+.olive-mini-pack-item {
+  width: 170px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.16);
+}
+
+.olive-mini-pack-item.center {
+  position: relative;
+  z-index: 3;
+  width: 230px;
+  height: 220px;
+  transform: translateY(-8px);
+}
+
+.olive-mini-pack-item.left {
+  position: absolute;
+  z-index: 2;
+  left: 32px;
+  transform: rotate(-12deg);
+}
+
+.olive-mini-pack-item.right {
+  position: absolute;
+  z-index: 1;
+  right: 32px;
+  transform: rotate(12deg);
+}
+
+/* ===== SCORE CARD (FIXED ALIGNMENT) ===== */
+.olive-mini-scorebar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+
+  padding: 16px 20px;
+  border-radius: 18px;
+  width: fit-content;
+  margin: 0 auto;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.olive-mini-scorebar img {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* TEXT */
+.olive-mini-title {
+  font-weight: 800;
+  font-size: 16px;
+  color: #1f3d2b;
+}
+
+.olive-mini-score {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f3d2b;
+}
+
+.olive-mini-score span {
+  color: #6b7280;
+  margin-left: 6px;
+  font-weight: 600;
+}
+
+/* ===== POSITIVES / NEGATIVES BLUR SECTION ===== */
+.olive-mini-tagsgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.olive-mini-panel {
+  position: relative;
+  border-radius: 18px;
+  padding: 14px 12px 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    0 12px 24px rgba(30, 50, 40, 0.12);
+}
+
+.olive-mini-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.24),
+    rgba(255, 255, 255, 0.08)
+  );
+  pointer-events: none;
+}
+
+.olive-mini-panel-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 34px;
+  font-weight: 800;
   margin-bottom: 10px;
 }
 
-.olive-mini-panel-header-title {
-  font-weight: 900;
-  color: #1f3d2b;
-  font-size: 1rem;
+.olive-mini-panel-header.good {
+  color: #284f39;
 }
 
-.olive-mini-panel-header-icon {
-  width: 22px;
-  height: 22px;
-  border-radius: 999px;
+.olive-mini-panel-header.bad {
+  color: #7b4a4f;
+}
+
+.olive-skeleton-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
-  place-items: center;
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 14px;
-}
-
-.olive-mini-panel-header-icon--good {
-  background: #1f3d2b;
-}
-
-.olive-mini-panel-header-icon--bad {
-  background: #b42318;
-}
-
-.olive-mini-chip-list {
-  display: flex;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
-  padding: 6px 6px 2px;
 }
 
-.olive-mini-chip {
-  width: 112px;
-  height: 20px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+.olive-skeleton-pill {
+  height: 18px;
+  border-radius: 999px;
+  background: rgba(248, 252, 249, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
-.olive-mini-chip--bad {
-  background: rgba(255, 255, 255, 0.28);
-}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .olive-health-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-@media (max-width: 980px) {
   .olive-nutrition-grid {
     grid-template-columns: 1fr;
   }
-  .olive-health-hero-grid {
-    grid-template-columns: 1fr;
-  }
-  .olive-health-hero-right {
-    justify-items: center;
-    text-align: center;
-  }
-  .olive-health-hero-right p {
-    max-width: 520px;
-    text-align: center;
-  }
-  .olive-health-ios-btn {
-    justify-self: center;
-  }
-}
 
-@media (max-width: 680px) {
-  .olive-health-hero-inner {
-    padding: 86px 0 96px;
-  }
-  .olive-health-hero-left h2 {
-    font-size: clamp(2.2rem, 10vw, 3.1rem);
-    text-align: center;
-  }
   .olive-nutrition-wrap {
-    margin-top: -80px;
-    padding-bottom: 56px;
+    margin-top: -92px;
+    margin-bottom: 22px;
   }
-  .olive-nutrition-card {
-    padding: 22px;
-  }
-  .olive-nutrition-left {
-    text-align: center;
-  }
-  .olive-benefits-bullets {
-    justify-content: center;
-  }
-  .olive-nutrition-left p {
-    font-size: 0.95rem;
-  }
-  .olive-score-circle {
-    width: 76px;
-    height: 76px;
-  }
-  .olive-product-tags {
+
+  .olive-mini-tagsgrid {
     grid-template-columns: 1fr;
+  }
+
+  .olive-mini-pack {
+    min-height: 200px;
+  }
+
+  .olive-mini-pack-item {
+    width: 140px;
+    height: 176px;
+  }
+
+  .olive-mini-pack-item.center {
+    width: 190px;
+    height: 190px;
+  }
+
+  .olive-mini-pack-item.left {
+    left: 16px;
+  }
+
+  .olive-mini-pack-item.right {
+    right: 16px;
   }
 }
 
+.olive-bottom-section {
+  margin-top: 8px;
+}
