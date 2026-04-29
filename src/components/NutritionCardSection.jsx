@@ -1,138 +1,116 @@
 import { motion } from "framer-motion";
-import { goodTags, warningTags } from "../data/siteContent";
 import "./HealthBenefitsSection.css";
-
-// Using the exact Straus assets you provided in the attachments.
-// (Vite will bundle them during build.)
-import PRODUCT_PACK_IMG from "../../../../../.cursor/projects/c-Users-Shishir-OneDrive-Desktop-olive-ui-clone/assets/c__Users_Shishir_AppData_Roaming_Cursor_User_workspaceStorage_f234cff710a15493094d9db1b5c10c9a_images_product-3__1_-c030471b-c340-4091-ad34-eb8e7103bc60.png";
-import PRODUCT_ICON_IMG from "../../../../../.cursor/projects/c-Users-Shishir-OneDrive-Desktop-olive-ui-clone/assets/c__Users_Shishir_AppData_Roaming_Cursor_User_workspaceStorage_f234cff710a15493094d9db1b5c10c9a_images_straus-ice-cream-description-341ae450-6385-4042-be94-0068411a0d71.png";
 
 const PRODUCT_NAME = "Straus Ice Cream";
 const scoreValue = 96;
 const ratingLabel = "Excellent";
 
-export default function NutritionCardSection() {
-  const positives = goodTags.slice(0, 7);
-  const negatives = warningTags.slice(0, 7);
+// images → must be inside /public/images/
+const PRODUCT_LEFT_IMG = "/images/product-3.webp";
+const PRODUCT_CENTER_IMG = "/images/product-pack.png";
+const PRODUCT_RIGHT_IMG = "/images/product-2.webp";
+const PRODUCT_ICON_IMG = "/images/product-icon.png";
 
+export default function NutritionCardSection() {
   return (
-    <motion.div
+    <motion.section
       className="olive-nutrition-wrap"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.7, ease: [0.25, 0.8, 0.25, 1] }}
+      transition={{ duration: 0.6 }}
     >
       <div className="olive-nutrition-card">
         <div className="olive-nutrition-grid">
+
+          {/* LEFT SIDE */}
           <div className="olive-nutrition-left">
             <h3>Achieve Nutritional Clarity</h3>
 
             <ul className="olive-benefits-bullets">
               <li>
-                <span className="olive-benefits-check" aria-hidden="true">
-                  ✓
-                </span>
-                <strong>
-                  Olive breaks down every ingredient into clear, actionable
-                  information.
-                </strong>
+                <span className="olive-benefits-check">✓</span>
+                Olive breaks down every ingredient into clear insights.
               </li>
               <li>
-                <span className="olive-benefits-check" aria-hidden="true">
-                  ✓
-                </span>
-                <strong>
-                  Olive scores products out of 100 based on additives,
-                  seedoils, processing level, and detected toxins.
-                </strong>
+                <span className="olive-benefits-check">✓</span>
+                Scores products out of 100 based on quality.
               </li>
               <li>
-                <span className="olive-benefits-check" aria-hidden="true">
-                  ✓
-                </span>
-                <strong>
-                  Our ranking system is designed by registered holistic health
-                  experts, ensuring you and your family make informed decisions
-                  and improve health outcomes.
-                </strong>
+                <span className="olive-benefits-check">✓</span>
+                Helps you make smarter food decisions.
               </li>
             </ul>
           </div>
 
-          <div className="olive-nutrition-product" aria-label="Product score card">
+          {/* RIGHT SIDE */}
+          <div className="olive-nutrition-product">
+
+            {/* IMAGE STACK */}
             <div className="olive-mini-pack">
               <img
-                src={PRODUCT_PACK_IMG}
-                alt={`${PRODUCT_NAME} product pack`}
+                src={PRODUCT_LEFT_IMG}
+                alt="Honey Mama's product"
+                className="olive-mini-pack-item left"
+              />
+              <img
+                src={PRODUCT_CENTER_IMG}
+                alt={PRODUCT_NAME}
+                className="olive-mini-pack-item center"
+              />
+              <img
+                src={PRODUCT_RIGHT_IMG}
+                alt="Olipop Strawberry Vanilla"
+                className="olive-mini-pack-item right"
               />
             </div>
 
+            {/* PRODUCT CARD */}
             <div className="olive-mini-scorebar">
-              <div className="olive-mini-scorebar-icon">
-                <img src={PRODUCT_ICON_IMG} alt="" aria-hidden="true" />
-              </div>
+              <img src={PRODUCT_ICON_IMG} alt="" />
 
-              <div className="olive-mini-scorebar-text">
-                <div className="olive-mini-scorebar-title">
-                  {PRODUCT_NAME}
-                </div>
-                <div className="olive-mini-scorebar-line">
-                  <span className="olive-mini-scorebar-score">
-                    {scoreValue}/100
-                  </span>
-                  <span className="olive-mini-scorebar-rating">
-                    {ratingLabel}
-                  </span>
+              <div>
+                <div className="olive-mini-title">{PRODUCT_NAME}</div>
+                <div className="olive-mini-score">
+                  {scoreValue}/100 <span>{ratingLabel}</span>
                 </div>
               </div>
             </div>
 
-            <div className="olive-mini-tagsgrid" role="group" aria-label="Product signals">
-              <div className="olive-mini-panel olive-mini-panel--good">
-                <div className="olive-mini-panel-header">
-                  <span className="olive-mini-panel-header-icon olive-mini-panel-header-icon--good" aria-hidden="true">
-                    ✓
-                  </span>
-                  <span className="olive-mini-panel-header-title">Positives</span>
+            {/* SKELETON PANELS */}
+            <div className="olive-mini-tagsgrid">
+
+              {/* POSITIVES */}
+              <div className="olive-mini-panel">
+                <div className="olive-mini-panel-header good">
+                  ✓ Positives
                 </div>
 
-                <div className="olive-mini-chip-list" aria-hidden="true">
-                  {positives.map((t) => (
-                    <span
-                      key={t}
-                      className="olive-mini-chip"
-                      title={t}
-                      aria-label={t}
-                    />
+                <div className="olive-skeleton-grid">
+                  {Array.from({ length: 6 }).map((_, i) => (
+                    <span key={i} className="olive-skeleton-pill" />
                   ))}
                 </div>
               </div>
 
-              <div className="olive-mini-panel olive-mini-panel--bad">
-                <div className="olive-mini-panel-header">
-                  <span className="olive-mini-panel-header-icon olive-mini-panel-header-icon--bad" aria-hidden="true">
-                    ×
-                  </span>
-                  <span className="olive-mini-panel-header-title">Negatives</span>
+              {/* NEGATIVES */}
+              <div className="olive-mini-panel">
+                <div className="olive-mini-panel-header bad">
+                  ✕ Negatives
                 </div>
 
-                <div className="olive-mini-chip-list" aria-hidden="true">
-                  {negatives.map((t) => (
-                    <span
-                      key={t}
-                      className="olive-mini-chip olive-mini-chip--bad"
-                      title={t}
-                      aria-label={t}
-                    />
+                <div className="olive-skeleton-grid">
+                  {Array.from({ length: 6 }).map((_, i) => (
+                    <span key={i} className="olive-skeleton-pill" />
                   ))}
                 </div>
               </div>
+
             </div>
+
           </div>
+
         </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 }
-
