@@ -1496,20 +1496,54 @@
 }
 
 .faq-section {
-  padding-top: 44px;
-}
-
-.faq-section .olive-icon {
-  margin: 0 auto 18px;
+  padding-top: 58px;
 }
 
 .faq-list {
   display: grid;
-  gap: 14px;
+  gap: 0;
+}
+
+.faq-shell {
+  background: #f5f1e6;
+  border-radius: 36px;
+  padding: 74px 38px 36px;
+}
+
+.faq-header {
+  margin-bottom: 46px;
+}
+
+.faq-header h2 {
+  position: relative;
+  display: inline-block;
+  font-size: clamp(2.2rem, 4.7vw, 4.2rem);
+  line-height: 1.13;
+}
+
+.faq-heading-olive {
+  position: absolute;
+  width: 76px;
+  height: 76px;
+  right: -96px;
+  top: 10px;
+  object-fit: contain;
+}
+
+.faq-download-btn {
+  margin-top: 30px;
+  background: #234b2d;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(30, 58, 44, 0.24);
 }
 
 .faq-item {
-  padding: 0 24px;
+  padding: 0 16px;
+  border-top: 1px solid rgba(35, 60, 42, 0.12);
+}
+
+.faq-item:first-child {
+  border-top: 0;
 }
 
 .faq-question {
@@ -1518,28 +1552,33 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 22px 0;
+  padding: 24px 0;
   border: 0;
   background: transparent;
-  color: var(--text-main);
+  color: #253f33;
   text-align: left;
-  font-weight: 900;
+  font-weight: 500;
+  font-size: 1.05rem;
 }
 
 .faq-icon {
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 18px;
+  height: 18px;
   flex: 0 0 auto;
   place-items: center;
   border-radius: 50%;
-  background: var(--green-soft);
-  color: var(--green-dark);
+  background: #244830;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .faq-answer {
   margin: 0;
-  padding-bottom: 22px;
+  padding: 0 0 24px;
+  color: #4a5d52;
+  line-height: 1.55;
 }
 
 .footer-section {
@@ -1739,6 +1778,22 @@
     max-width: 100%;
   }
 
+  .faq-shell {
+    padding: 54px 24px 30px;
+    border-radius: 26px;
+  }
+
+  .faq-header h2 {
+    font-size: clamp(2rem, 7vw, 3.2rem);
+  }
+
+  .faq-heading-olive {
+    width: 58px;
+    height: 58px;
+    right: -72px;
+    top: 8px;
+  }
+
   .product-phone {
     width: min(100%, 306px);
     height: 612px;
@@ -1911,6 +1966,31 @@
   .independent-pledge p {
     font-size: clamp(1.2rem, 7vw, 2rem);
     line-height: 1.22;
+  }
+
+  .faq-shell {
+    padding: 40px 16px 24px;
+    border-radius: 20px;
+  }
+
+  .faq-header {
+    margin-bottom: 30px;
+  }
+
+  .faq-header h2 {
+    font-size: clamp(1.7rem, 9.4vw, 2.5rem);
+  }
+
+  .faq-heading-olive {
+    width: 46px;
+    height: 46px;
+    right: -56px;
+    top: 12px;
+  }
+
+  .faq-question {
+    padding: 20px 0;
+    font-size: 0.95rem;
   }
 
   .pricing-floating-olive {
