@@ -6,18 +6,35 @@ const Footer = () => {
     <footer className="footer-section">
       {/* Final call to action uses the same promise as the live Olive footer */}
       <section className="footer-cta">
-        <h2>Keep your family safe with Olive</h2>
-        <div className="footer-benefits">
-          <span>Effortless food scanning</span>
-          <span>Peace of mind for parents</span>
-          <span>Healthy product recommendations</span>
+        <img
+          src="/images/footer-cta-family.png"
+          alt="Family enjoying dinner together"
+          className="footer-cta-bg"
+        />
+        <div className="footer-cta-overlay" />
+
+        <div className="footer-cta-content">
+          <h2>
+            Keep your family
+            <br />
+            safe with Olive
+          </h2>
+          <ul className="footer-cta-points">
+            <li>Effortless food scanning</li>
+            <li>Peace of mind for parents</li>
+            <li>Healthy product recommendations</li>
+          </ul>
+          <a
+            className="button button-secondary"
+            href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
+          >
+            Download for iOS
+          </a>
         </div>
-        <a
-          className="button button-primary"
-          href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
-        >
-          Download for iOS
-        </a>
+
+        <span className="footer-cta-line top-left" aria-hidden="true" />
+        <span className="footer-cta-line mid-right" aria-hidden="true" />
+        <span className="footer-cta-line bottom-right" aria-hidden="true" />
       </section>
 
       <div className="footer-bar">
