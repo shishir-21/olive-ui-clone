@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import "./HealthBenefitsSection.css";
 
 const PRODUCT_NAME = "Straus Ice Cream";
-const scoreValue = 96;
+const scoreValue = 94;
 const ratingLabel = "Excellent";
 
 // images → must be inside /public/images/
@@ -29,15 +29,19 @@ export default function NutritionCardSection() {
             <ul className="olive-benefits-bullets">
               <li>
                 <span className="olive-benefits-check">✓</span>
-                Olive breaks down every ingredient into clear insights.
+                Olive breaks down every ingredient into clear, actionable
+                information.
               </li>
               <li>
                 <span className="olive-benefits-check">✓</span>
-                Scores products out of 100 based on quality.
+                Olive scores products out of 100 based on additives, seedoils,
+                processing level, and detected toxins.
               </li>
               <li>
                 <span className="olive-benefits-check">✓</span>
-                Helps you make smarter food decisions.
+                Our ranking system is designed by registered holistic health
+                experts, ensuring you and your family make informed decisions
+                and improve health outcomes.
               </li>
             </ul>
           </div>

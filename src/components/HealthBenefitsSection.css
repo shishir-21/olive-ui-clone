@@ -82,16 +82,17 @@ body {
 .olive-nutrition-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
+  gap: 42px;
+  align-items: start;
 }
 
 /* ===== LEFT ===== */
 .olive-nutrition-left h3 {
   font-size: 32px;
   color: #1f3d2b;
-  margin-bottom: 24px;
-  font-weight: 800;
+  margin-bottom: 22px;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .olive-benefits-bullets {
@@ -101,27 +102,33 @@ body {
 
 .olive-benefits-bullets li {
   margin-bottom: 16px;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   gap: 10px;
   color: #2f3e34;
+  line-height: 1.45;
+  font-size: 16px;
 }
 
 .olive-benefits-check {
   background: #1f3d2b;
   color: white;
   border-radius: 50%;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 3px;
+  flex: 0 0 20px;
 }
 
 /* ===== RIGHT PRODUCT CARD (FIXED) ===== */
 .olive-nutrition-product {
   background: linear-gradient(180deg, #cfe2d5, #bcd6c7);
-  padding: 32px 24px 40px;
+  padding: 22px 16px 24px;
   border-radius: 28px;
   text-align: center;
   position: relative;
@@ -134,15 +141,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  min-height: 220px;
-  margin-bottom: 28px;
+  min-height: 176px;
+  margin-bottom: 16px;
 }
 
 .olive-mini-pack-item {
-  width: 170px;
-  height: 210px;
+  width: 134px;
+  height: 162px;
   object-fit: cover;
-  border-radius: 24px;
+  border-radius: 20px;
   border: 2px solid rgba(255, 255, 255, 0.75);
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.16);
 }
@@ -150,22 +157,22 @@ body {
 .olive-mini-pack-item.center {
   position: relative;
   z-index: 3;
-  width: 230px;
-  height: 220px;
-  transform: translateY(-8px);
+  width: 176px;
+  height: 170px;
+  transform: translateY(-6px);
 }
 
 .olive-mini-pack-item.left {
   position: absolute;
   z-index: 2;
-  left: 32px;
+  left: 18px;
   transform: rotate(-12deg);
 }
 
 .olive-mini-pack-item.right {
   position: absolute;
   z-index: 1;
-  right: 32px;
+  right: 18px;
   transform: rotate(12deg);
 }
 
@@ -173,14 +180,14 @@ body {
 .olive-mini-scorebar {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   justify-content: center;
 
   background: rgba(255,255,255,0.75);
   backdrop-filter: blur(12px);
 
-  padding: 16px 20px;
-  border-radius: 18px;
+  padding: 10px 14px;
+  border-radius: 14px;
   width: fit-content;
   margin: 0 auto;
 
@@ -189,43 +196,43 @@ body {
 
 /* ICON */
 .olive-mini-scorebar img {
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   border-radius: 10px;
   object-fit: cover;
 }
 
 /* TEXT */
 .olive-mini-title {
-  font-weight: 800;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 15px;
   color: #1f3d2b;
 }
 
 .olive-mini-score {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   color: #1f3d2b;
 }
 
 .olive-mini-score span {
   color: #6b7280;
   margin-left: 6px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* ===== POSITIVES / NEGATIVES BLUR SECTION ===== */
 .olive-mini-tagsgrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 18px;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .olive-mini-panel {
   position: relative;
   border-radius: 18px;
-  padding: 14px 12px 12px;
+  padding: 10px 9px 9px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.34);
   background: rgba(255, 255, 255, 0.26);
@@ -254,10 +261,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-size: 34px;
-  font-weight: 800;
-  margin-bottom: 10px;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .olive-mini-panel-header.good {
@@ -273,11 +280,11 @@ body {
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  gap: 6px;
 }
 
 .olive-skeleton-pill {
-  height: 18px;
+  height: 14px;
   border-radius: 999px;
   background: rgba(248, 252, 249, 0.72);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
