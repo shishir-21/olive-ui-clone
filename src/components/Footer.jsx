@@ -38,12 +38,6 @@ const Footer = () => {
       </section>
 
       <div className="footer-bar">
-        <a className="brand" href="#top" aria-label="Olive home">
-          <span className="brand-mark">O</span>
-          <span>Olive</span>
-        </a>
-
-        {/* Link groups match the Explore and About columns from Olive */}
         <div className="footer-links">
           {footerLinks.map((group) => (
             <div className="footer-link-group" key={group.title}>
@@ -55,23 +49,27 @@ const Footer = () => {
               ))}
             </div>
           ))}
+        </div>
 
-          <div className="footer-link-group">
-            <h3>Subscribe</h3>
-            <p>Get the latest lab testing data sent directly to your inbox.</p>
-            <form className="subscribe-form">
-              <input aria-label="Email address" placeholder="Email address" />
-              <button type="submit">Subscribe</button>
-            </form>
-          </div>
+        <div className="footer-subscribe">
+          <div className="footer-olive-wordmark" aria-label="Olive">Olive</div>
+          <p>Get the latest lab testing data sent directly to your inbox.</p>
+          <form className="subscribe-form">
+            <input aria-label="Email address" placeholder="Enter Email address" />
+            <button type="submit">Subscribe</button>
+          </form>
         </div>
       </div>
 
       <div className="footer-copy">
-        <span>Copyright 2026 Olive Inc.</span>
-        <a href="https://www.oliveapp.com/terms-of-service">Terms of Service</a>
-        <a href="https://www.oliveapp.com/privacy-policy">Privacy Policy</a>
-        <a href="https://www.oliveapp.com/refund-policy">Refund Policy</a>
+        <div className="footer-copy-links">
+          <a href="https://www.oliveapp.com/terms-of-service">Terms of Service</a>
+          <a href="https://www.oliveapp.com/privacy-policy">Privacy Policy</a>
+          <a href="https://www.oliveapp.com/refund-policy">Refund Policy</a>
+          <a href="https://www.oliveapp.com/terms-of-service">Medical Consent</a>
+          <a href="https://www.oliveapp.com/sign-in">Sign in</a>
+        </div>
+        <span>© 2026 Olive Inc.</span>
       </div>
     </footer>
   );

@@ -1582,9 +1582,11 @@
 }
 
 .footer-section {
-  width: min(100% - 40px, var(--container-width));
-  margin: 0 auto;
-  padding: 24px 0 40px;
+  width: min(100% - 40px, 1100px);
+  margin: 0px auto 38px;
+  padding: 0px 0 36px;
+  border-radius: 38px;
+  background: #3b7247;
 }
 
 .footer-cta {
@@ -1700,67 +1702,110 @@
 
 .footer-bar {
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 50px;
-  padding-top: 34px;
-  border-top: 1px solid var(--border);
+  grid-template-columns: 1fr 1fr 1.15fr;
+  gap: 40px;
+  padding: 26px 34px 34px;
 }
 
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+  grid-column: 1 / span 2;
 }
 
 .footer-link-group {
   display: grid;
   align-content: start;
-  gap: 10px;
+  gap: 9px;
 }
 
 .footer-link-group h3 {
   margin: 0 0 8px;
-  color: var(--text-main);
+  color: #ffffff;
+  font-size: 1.85rem;
+  font-weight: 500;
 }
 
 .footer-link-group a,
-.footer-link-group p,
-.footer-copy,
-.footer-copy a {
-  color: var(--text-soft);
+.footer-link-group p {
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1.2rem;
+}
+
+.footer-subscribe {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.footer-olive-wordmark {
+  color: #b9c345;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.footer-subscribe p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1.18rem;
+  line-height: 1.38;
+  max-width: 300px;
 }
 
 .subscribe-form {
   display: flex;
-  min-height: 48px;
+  min-height: 56px;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 999px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .subscribe-form input {
   min-width: 0;
   flex: 1;
   border: 0;
-  padding: 0 16px;
+  padding: 0 16px 0 20px;
   background: transparent;
+  color: #ffffff;
+}
+
+.subscribe-form input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .subscribe-form button {
   border: 0;
-  padding: 0 16px;
-  background: var(--green-dark);
-  color: #ffffff;
-  font-weight: 900;
+  padding: 0 28px;
+  background: #ffffff;
+  color: #244830;
+  font-weight: 600;
+  border-radius: 999px;
 }
 
 .footer-copy {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 34px;
+  padding: 26px 0 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1rem;
+}
+
+.footer-copy-links {
+  display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 34px;
-  font-size: 0.9rem;
+  gap: 18px;
+}
+
+.footer-copy a {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 @keyframes slide-products {
@@ -1840,6 +1885,50 @@
   .app-slide-row,
   .footer-links {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-section {
+    margin-bottom: 26px;
+    border-radius: 28px;
+  }
+
+  .footer-bar {
+    gap: 24px;
+    padding: 24px 24px 28px;
+  }
+
+  .footer-links {
+    grid-column: auto;
+  }
+
+  .footer-subscribe {
+    gap: 10px;
+  }
+
+  .footer-olive-wordmark {
+    font-size: 2.4rem;
+  }
+
+  .footer-link-group h3 {
+    font-size: 1.45rem;
+  }
+
+  .footer-link-group a,
+  .footer-subscribe p {
+    font-size: 1rem;
+  }
+
+  .subscribe-form {
+    min-height: 50px;
+  }
+
+  .footer-copy {
+    margin: 0 24px;
+    padding: 20px 0 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.92rem;
   }
 
   .protection-showcase {
@@ -2037,6 +2126,49 @@
     grid-template-columns: 1fr;
   }
 
+  .footer-section {
+    border-radius: 22px;
+    padding: 18px 0 22px;
+    margin-bottom: 16px;
+  }
+
+  .footer-bar {
+    padding: 18px 14px 22px;
+    gap: 18px;
+  }
+
+  .footer-link-group h3 {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+
+  .footer-link-group a,
+  .footer-subscribe p {
+    font-size: 0.95rem;
+  }
+
+  .footer-olive-wordmark {
+    font-size: 2rem;
+  }
+
+  .subscribe-form {
+    min-height: 46px;
+  }
+
+  .subscribe-form button {
+    padding: 0 20px;
+  }
+
+  .footer-copy {
+    margin: 0 14px;
+    padding: 16px 0 4px;
+    font-size: 0.84rem;
+  }
+
+  .footer-copy-links {
+    gap: 12px;
+  }
+
   .testimonials-showcase-grid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -2132,7 +2264,7 @@
   }
 
   .footer-cta .button {
-    margin-top: 20px;
+    margin-top: 50px;
     min-height: 46px;
     padding: 0 22px;
   }
