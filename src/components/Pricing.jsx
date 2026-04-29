@@ -1,26 +1,57 @@
-import { appSlides, comparisonItems, pricingPlans } from "../data/siteContent";
+import { appSlides, pricingPlans } from "../data/siteContent";
 
 // Pricing section - shows what makes Olive different and pricing plans
 // It includes comparison bullets, price cards, and the final toxin CTA
 const Pricing = () => {
+  const comparisonMatrix = [
+    { item: "Detailed Product Breakdown", values: [true, true, true] },
+    { item: "Comprehensive Water Data", values: [true, false, false] },
+    { item: "Seed Oil Free Dining Map", values: [true, false, false] },
+    { item: "Seed Oil Flagging", values: [true, false, true] },
+    { item: "Certified Lab-Testing Data", values: [true, false, false] },
+  ];
+
   return (
     <section className="section" id="pricing">
       <div className="comparison-strip">
-        <div className="section-header center-header">
-          <h2>Olive Food Scanner App vs. The Rest</h2>
-          <a
-            className="button button-primary"
-            href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
-          >
-            Download for iOS
-          </a>
-        </div>
+        <div className="comparison-board">
+          <div className="comparison-header section-header center-header">
+            <h2>Olive Food Scanner App vs. The Rest</h2>
+            <a
+              className="button comparison-download-btn"
+              href="https://apps.apple.com/us/app/olive-holistic-food-scanner/id6739765789"
+            >
+              Download for iOS
+            </a>
+          </div>
 
-        {/* Feature pills show what Olive includes compared with simple scanners */}
-        <div className="comparison-pills">
-          {comparisonItems.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
+          <div className="comparison-grid" role="table" aria-label="Feature comparison table">
+            <div className="comparison-grid-row comparison-grid-head" role="row">
+              <div className="comparison-cell feature-col" role="columnheader" />
+              <div className="comparison-cell value-col" role="columnheader">
+                <img src="/images/avocado-icon.png" alt="Olive" className="comparison-brand-icon" />
+              </div>
+              <div className="comparison-cell value-col" role="columnheader">
+                <span className="comparison-brand-emoji" aria-hidden="true">🥕</span>
+              </div>
+              <div className="comparison-cell value-col" role="columnheader">
+                <span className="comparison-brand-badge" aria-hidden="true">B</span>
+              </div>
+            </div>
+
+            {comparisonMatrix.map((row) => (
+              <div className="comparison-grid-row" role="row" key={row.item}>
+                <div className="comparison-cell feature-col" role="cell">{row.item}</div>
+                {row.values.map((value, idx) => (
+                  <div className="comparison-cell value-col" role="cell" key={`${row.item}-${idx}`}>
+                    <span className={`comparison-mark ${value ? "is-yes" : "is-no"}`}>
+                      {value ? "✓" : "✕"}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

@@ -1144,14 +1144,108 @@
 }
 
 .comparison-strip {
-  margin-bottom: 70px;
+  margin-bottom: 74px;
 }
 
-.comparison-pills {
+.comparison-board {
+  background: #3b7247;
+  border-radius: 20px;
+  padding: 52px 36px 34px;
+}
+
+.comparison-header {
+  margin-bottom: 28px;
+}
+
+.comparison-header h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.14;
+}
+
+.comparison-download-btn {
+  margin-top: 24px;
+  background: #ffffff;
+  color: #2c5b3a;
+  box-shadow: 0 10px 22px rgba(17, 36, 24, 0.22);
+}
+
+.comparison-grid {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.comparison-grid-row {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.6fr) repeat(3, minmax(96px, 0.42fr));
+  align-items: center;
+  min-height: 86px;
+  border-top: 1px solid rgba(20, 43, 30, 0.24);
+}
+
+.comparison-grid-head {
+  min-height: 94px;
+  border-top: 0;
+}
+
+.comparison-cell {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 12px;
+}
+
+.comparison-cell.feature-col {
+  justify-content: flex-start;
+  color: #ffffff;
+  font-size: 1.02rem;
+  font-weight: 500;
+}
+
+.comparison-brand-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.comparison-brand-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.comparison-brand-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.88);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.35rem;
+}
+
+.comparison-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.comparison-mark.is-yes {
+  background: #bccb52;
+  color: #2f5a37;
+}
+
+.comparison-mark.is-no {
+  color: #f12a2a;
+  font-size: 1.65rem;
+  font-weight: 900;
 }
 
 .pricing-title {
@@ -1583,6 +1677,45 @@
   .testimonials-showcase::before,
   .testimonials-showcase::after {
     display: none;
+  }
+
+  .comparison-board {
+    padding: 34px 18px 18px;
+  }
+
+  .comparison-grid-row {
+    grid-template-columns: minmax(170px, 1.3fr) repeat(3, minmax(52px, 0.45fr));
+    min-height: 74px;
+  }
+
+  .comparison-grid-head {
+    min-height: 78px;
+  }
+
+  .comparison-cell.feature-col {
+    font-size: 0.9rem;
+    line-height: 1.32;
+    padding-right: 8px;
+  }
+
+  .comparison-brand-icon,
+  .comparison-brand-badge {
+    width: 32px;
+    height: 32px;
+  }
+
+  .comparison-brand-emoji {
+    font-size: 1.55rem;
+  }
+
+  .comparison-mark {
+    width: 26px;
+    height: 26px;
+    font-size: 0.92rem;
+  }
+
+  .comparison-mark.is-no {
+    font-size: 1.35rem;
   }
 
   .testimonials-copy-wrap {
