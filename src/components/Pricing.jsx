@@ -56,6 +56,12 @@ const Pricing = () => {
       </div>
 
       <div className="pricing-layout">
+        <img
+          src="/images/pricing-olive-new.png"
+          alt=""
+          className="pricing-floating-olive"
+          aria-hidden="true"
+        />
         <div className="pricing-title">
           <h2>
             Healthy Choices

@@ -1250,15 +1250,66 @@
 
 .pricing-title {
   display: grid;
-  place-items: center start;
+  place-items: center;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.pricing-layout {
+  position: relative;
+  display: block;
+  padding: 6px 0 12px;
+}
+
+.pricing-layout::after {
+  content: "";
+  position: absolute;
+  right: -44px;
+  bottom: -36px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle at center, rgba(198, 220, 206, 0.42) 0%, rgba(198, 220, 206, 0.2) 42%, rgba(198, 220, 206, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pricing-floating-olive {
+  position: absolute;
+  left: 58px;
+  top: 118px;
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.pricing-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
 }
 
 .pricing-card {
   position: relative;
+  border-radius: 18px;
+  border: none;
+  box-shadow: 0 16px 42px rgba(30, 58, 44, 0.11);
+  padding: 24px;
 }
 
 .pricing-card--featured {
   background: var(--green-dark);
+}
+
+.pricing-grid .pricing-card:not(.pricing-card--featured) {
+  background: #e9efec;
+}
+
+.pricing-card h3 {
+  text-transform: capitalize;
+  font-size: 1.65rem;
 }
 
 .pricing-card--featured h3,
@@ -1270,15 +1321,7 @@
 }
 
 .pricing-badge {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-  font-size: 0.8rem;
-  font-weight: 900;
+  display: none;
 }
 
 .pricing-value {
@@ -1300,6 +1343,41 @@
 .pricing-card .button {
   width: 100%;
   margin-top: 18px;
+  min-height: 48px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.pricing-card li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #183528;
+  font-weight: 600;
+}
+
+.pricing-card li::before {
+  content: "✓";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #2f6747;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.pricing-card--featured li::before {
+  background: #ffffff;
+  color: #315f41;
 }
 
 .app-slide-row {
@@ -1543,6 +1621,20 @@
     text-align: center;
   }
 
+  .pricing-floating-olive {
+    left: 10px;
+    top: 150px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .pricing-layout::after {
+    right: -60px;
+    bottom: -72px;
+    width: 240px;
+    height: 240px;
+  }
+
   .app-slide-row,
   .footer-links {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1681,6 +1773,17 @@
 
   .comparison-board {
     padding: 34px 18px 18px;
+  }
+
+  .pricing-floating-olive {
+    display: none;
+  }
+
+  .pricing-layout::after {
+    width: 210px;
+    height: 210px;
+    right: -52px;
+    bottom: -48px;
   }
 
   .comparison-grid-row {
