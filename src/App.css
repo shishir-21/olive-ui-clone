@@ -986,33 +986,161 @@
   gap: 22px;
 }
 
-.testimonial-card {
-  min-height: 260px;
-  background: #fffdf8;
+/* Real mothers / results slide */
+.testimonials-showcase {
+  position: relative;
+  padding-top: 66px;
+  padding-bottom: 84px;
 }
 
-.testimonial-avatar {
+.testimonials-showcase::before,
+.testimonials-showcase::after {
+  content: "";
+  position: absolute;
+  left: -70px;
+  width: 190px;
+  border-radius: 999px;
+  background: rgba(196, 219, 205, 0.5);
+  z-index: 0;
+}
+
+.testimonials-showcase::before {
+  top: 150px;
+  height: 260px;
+}
+
+.testimonials-showcase::after {
+  bottom: 40px;
+  height: 190px;
+}
+
+.testimonials-showcase-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
-  width: 58px;
-  height: 58px;
-  place-items: center;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.testimonials-photo-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 520px;
+}
+
+.testimonials-photo-main {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: grayscale(1);
+  display: block;
+}
+
+.testimonials-copy-wrap {
+  position: relative;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(-30px);
+}
+
+.testimonials-copy-wrap h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--green-dark);
+}
+
+.testimonials-reviews-link {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #355949;
+  font-size: 0.90rem;
+  font-weight: 500;
+}
+
+.testimonials-reviews-link::after {
+  content: "->";
+  font-size: 0.95rem;
+}
+
+.testimonials-floating-cards {
+  position: relative;
+  margin-top: 8px;
+}
+
+.testimonial-float-card {
+  position: absolute;
+  width: min(92vw, 350px);
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 8px 26px rgba(26, 45, 35, 0.12);
+}
+
+.testimonial-float-card p {
+  margin: 0;
+  color: #2f3f35;
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+.testimonial-float-card strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.98rem;
+  color: #1f3d2b;
+}
+
+.testimonial-stars {
+  margin-top: 4px;
+  color: #f4bc12;
+  letter-spacing: 0.1em;
+  font-size: 0.92rem;
+}
+
+.testimonial-mini-avatar {
+  position: absolute;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: #d7c17d;
-  color: var(--green-dark);
-  font-weight: 900;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(26, 45, 35, 0.18);
 }
 
-.testimonial-card strong {
-  display: block;
-  margin-top: 18px;
+.testimonial-float-card.top {
+  top: -470px;
+  left: -160px;
 }
 
-.reviews-link {
-  display: block;
-  width: max-content;
-  margin: 26px auto 0;
-  color: var(--green-dark);
-  font-weight: 900;
+.testimonial-float-card.top .testimonial-mini-avatar {
+  right: -36px;
+  bottom: 14px;
+}
+
+.testimonial-float-card.middle {
+  top: -10px;
+  left: 7px;
+}
+
+.testimonial-float-card.middle .testimonial-mini-avatar {
+  left: -34px;
+  bottom: 10px;
+}
+
+.testimonial-float-card.bottom {
+  top: 150px;
+  left: -350px;
+}
+
+.testimonial-float-card.bottom .testimonial-mini-avatar {
+  right: -35px;
+  bottom: -2px;
 }
 
 .comparison-strip {
@@ -1408,7 +1536,7 @@
   .work-card,
   .benefit-card,
   .score-panel,
-  .outcomes-card,
+  .testimonial-float-card,
   .testimonial-card,
   .pricing-card {
     padding: 22px;
@@ -1440,6 +1568,50 @@
   .footer-links,
   .work-stack--horizontal {
     grid-template-columns: 1fr;
+  }
+
+  .testimonials-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .testimonials-showcase {
+    padding-top: 24px;
+    padding-bottom: 56px;
+  }
+
+  .testimonials-showcase::before,
+  .testimonials-showcase::after {
+    display: none;
+  }
+
+  .testimonials-copy-wrap {
+    min-height: unset;
+  }
+
+  .testimonials-copy-wrap h2 {
+    font-size: clamp(2rem, 9vw, 3.2rem);
+  }
+
+  .testimonials-floating-cards {
+    display: grid;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .testimonial-float-card {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  .testimonial-float-card.top .testimonial-mini-avatar,
+  .testimonial-float-card.middle .testimonial-mini-avatar,
+  .testimonial-float-card.bottom .testimonial-mini-avatar {
+    right: 14px;
+    left: auto;
+    bottom: 12px;
   }
 
   .product-tile {
