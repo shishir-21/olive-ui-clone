@@ -6,39 +6,40 @@ const IOS_APP_URL =
 
 export default function HealthHeroSection() {
   return (
-    <motion.section
-      id="benefits"
-      className="olive-health-hero"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.7, ease: [0.25, 0.8, 0.25, 1] }}
-    >
-      <div className="olive-health-hero-inner">
-        <div className="olive-health-hero-grid">
-          <div className="olive-health-hero-left">
-            <h2>Health Benefits of Using Olive</h2>
-          </div>
+    <section className="olive-hero-wrapper">
+      <motion.div
+        className="olive-health-hero"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+        <div className="olive-health-hero-inner">
+          <div className="olive-health-hero-grid">
 
-          <div className="olive-health-hero-right">
-            <p>
-              Olive proactively flags harmful ingredients and offers personalized
-              recommendations, empowering you to make better choices for your
-              family's health.
-            </p>
+            <div className="olive-health-hero-left">
+              <h2>Health Benefits of Using Olive</h2>
+            </div>
 
-            <a
-              className="olive-health-ios-btn"
-              href={IOS_APP_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Download for iOS
-            </a>
+            <div className="olive-health-hero-right">
+              <p>
+                Olive proactively flags harmful ingredients and offers
+                personalized recommendations, empowering you to make better
+                choices for your family's health.
+              </p>
+
+              <a
+                href={IOS_APP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="olive-health-ios-btn"
+              >
+                Download for iOS
+              </a>
+            </div>
+
           </div>
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }
-
