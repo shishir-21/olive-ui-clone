@@ -1,8 +1,16 @@
-import { appSlides, pricingPlans } from "../data/siteContent";
+import { pricingPlans } from "../data/siteContent";
 
 // Pricing section - shows what makes Olive different and pricing plans
 // It includes comparison bullets, price cards, and the final toxin CTA
 const Pricing = () => {
+  const showcaseSlides = [
+    "/images/showcase-slide-1.png",
+    "/images/showcase-slide-2.png",
+    "/images/showcase-slide-3.png",
+    "/images/showcase-slide-4.png",
+  ];
+  const showcaseLoopSlides = [...showcaseSlides, showcaseSlides[0]];
+
   const comparisonMatrix = [
     { item: "Detailed Product Breakdown", values: [true, true, true] },
     { item: "Comprehensive Water Data", values: [true, false, false] },
@@ -107,28 +115,48 @@ const Pricing = () => {
         </div>
       </div>
 
-      {/* Four phone cards stand in for the app screenshots on the original page */}
-      <div className="app-slide-row" aria-label="Olive app screens">
-        {appSlides.map((slide, index) => (
-          <article className="app-slide" key={slide}>
-            <span>Slide {index + 1}</span>
-            <strong>{slide}</strong>
-          </article>
-        ))}
-      </div>
+      <section className="protection-showcase">
+        <div className="showcase-slider-window" aria-label="Healthy food lifestyle gallery">
+          <div className="showcase-slider-track">
+            {showcaseLoopSlides.map((src, index) => (
+              <article className="showcase-slide-item" key={`${src}-${index}`}>
+                <img src={src} alt="Healthy food and family lifestyle" />
+              </article>
+            ))}
+          </div>
+        </div>
 
-      <section className="toxin-cta">
+        <div className="showcase-dots" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+
         <h2>
           Protect Your Family
           <br />
           From Hidden Toxins
         </h2>
         <a
-          className="button button-primary"
+          className="button button-secondary"
           href="https://signup.oliveapp.com/olive-onboarding/"
         >
           Sign up for Olive today
         </a>
+      </section>
+
+      <section className="independent-pledge">
+        <h2>
+          100% Independent.
+          <br />
+          Always.
+        </h2>
+        <p>
+          We <span>never monetize</span> through brand deals, affiliate links, or
+          ads - so you can trust our recommendations are always aligned with our
+          users.
+        </p>
       </section>
     </section>
   );

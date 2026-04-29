@@ -1380,47 +1380,119 @@
   color: #315f41;
 }
 
-.app-slide-row {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 60px;
-}
-
-.app-slide {
-  display: grid;
-  min-height: 260px;
-  align-content: end;
-  gap: 10px;
-  padding: 22px;
-  border-radius: 28px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.26), transparent 40%),
-    var(--green-dark);
-  color: #ffffff;
-  box-shadow: 0 24px 48px rgba(30, 79, 58, 0.2);
-}
-
-.app-slide span {
-  color: #dfecc3;
-  font-weight: 800;
-}
-
-.toxin-cta,
+.protection-showcase,
 .footer-cta {
   display: grid;
   place-items: center;
-  margin-top: 80px;
-  padding: 76px 24px;
+  margin-top: 72px;
+  padding: 0 24px 66px;
   text-align: center;
 }
 
-.toxin-cta {
-  border-radius: 8px;
-  background: #f7f1e3;
+.protection-showcase {
+  border-radius: 34px;
+  background: #3b7247;
+  overflow: hidden;
 }
 
-.toxin-cta .button,
+.showcase-slider-window {
+  width: min(100%, 900px);
+  margin-top: -74px;
+  border-radius: 0 0 50% 50%;
+  overflow: hidden;
+}
+
+.showcase-slider-track {
+  display: flex;
+  width: 500%;
+  animation: showcase-loop 26s ease-in-out infinite;
+}
+
+.showcase-slide-item {
+  flex: 0 0 20%;
+  aspect-ratio: 16 / 8.6;
+}
+
+.showcase-slide-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.showcase-dots {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+}
+
+.showcase-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.showcase-dots span:nth-child(1) {
+  background: #ffffff;
+}
+
+.protection-showcase h2 {
+  margin-top: 56px;
+  color: #ffffff;
+  font-size: clamp(2.2rem, 4.8vw, 4.25rem);
+  line-height: 1.08;
+}
+
+.protection-showcase .button {
+  margin-top: 26px;
+  margin-bottom: 8px;
+  min-height: 50px;
+  padding: 0 34px;
+  border: 0;
+}
+
+.independent-pledge {
+  margin-top: 82px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 44px;
+  align-items: center;
+}
+
+.independent-pledge h2 {
+  margin: 0;
+  color: #f48eb1;
+  font-size: clamp(3rem, 7vw, 6.2rem);
+  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.independent-pledge p {
+  margin: 0;
+  color: #2b4c3f;
+  font-size: clamp(1.3rem, 2.6vw, 2.9rem);
+  line-height: 1.2;
+  font-weight: 700;
+  max-width: 780px;
+}
+
+.independent-pledge p span {
+  color: #b9c345;
+}
+
 .footer-cta .button {
   margin-top: 26px;
+}
+
+@keyframes showcase-loop {
+  0%, 16% { transform: translateX(0%); }
+  20%, 36% { transform: translateX(-20%); }
+  40%, 56% { transform: translateX(-40%); }
+  60%, 76% { transform: translateX(-60%); }
+  80%, 96% { transform: translateX(-80%); }
+  100% { transform: translateX(-80%); }
 }
 
 .faq-section {
@@ -1640,6 +1712,33 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .protection-showcase {
+    margin-top: 54px;
+    padding: 0 18px 52px;
+    border-radius: 28px;
+  }
+
+  .showcase-slider-window {
+    margin-top: -48px;
+    border-radius: 0 0 44% 44%;
+  }
+
+  .protection-showcase h2 {
+    margin-top: 40px;
+  }
+
+  .independent-pledge {
+    margin-top: 68px;
+    gap: 26px;
+    grid-template-columns: 1fr;
+  }
+
+  .independent-pledge h2,
+  .independent-pledge p {
+    text-align: center;
+    max-width: 100%;
+  }
+
   .product-phone {
     width: min(100%, 306px);
     height: 612px;
@@ -1773,6 +1872,45 @@
 
   .comparison-board {
     padding: 34px 18px 18px;
+  }
+
+  .protection-showcase {
+    padding: 0 14px 44px;
+    border-radius: 24px;
+  }
+
+  .showcase-slider-window {
+    margin-top: -24px;
+    border-radius: 0 0 34% 34%;
+  }
+
+  .showcase-slider-track {
+    animation-duration: 22s;
+  }
+
+  .protection-showcase h2 {
+    margin-top: 28px;
+    font-size: clamp(1.9rem, 9vw, 3rem);
+  }
+
+  .protection-showcase .button {
+    margin-top: 20px;
+    min-height: 46px;
+    padding: 0 22px;
+  }
+
+  .independent-pledge {
+    margin-top: 54px;
+    gap: 18px;
+  }
+
+  .independent-pledge h2 {
+    font-size: clamp(2.3rem, 15vw, 4rem);
+  }
+
+  .independent-pledge p {
+    font-size: clamp(1.2rem, 7vw, 2rem);
+    line-height: 1.22;
   }
 
   .pricing-floating-olive {
