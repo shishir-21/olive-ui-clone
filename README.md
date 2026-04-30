@@ -6,6 +6,8 @@ This project focuses on UI/UX accuracy, smooth animations, and responsive design
 🔗 **Live Demo:**
 https://olive-ui-clone-one.vercel.app/
 
+<img width="1919" height="900" alt="image" src="https://github.com/user-attachments/assets/c665df4e-d379-4b60-8c3d-94b7c6269cbc" />
+
 ---
 
 ## 🚀 Features
