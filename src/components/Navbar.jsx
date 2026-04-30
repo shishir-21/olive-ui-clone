@@ -7,8 +7,8 @@ const Navbar = () => {
     <header className="navbar">
       {/* Logo and brand name - links back to top of page */}
       <a className="brand" href="#top" aria-label="Olive home">
-        <span className="brand-mark">O</span>
-        <span>Olive</span>
+        <img src="/logo.png" alt="Olive logo" style={{ height: "55px", objectFit: "contain", transform: "scale(1.3)", marginLeft: "20px" }} />
+
       </a>
 
       {/* Main navigation menu links */}

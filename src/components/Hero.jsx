@@ -32,7 +32,7 @@ const Hero = () => {
           <span>Trusted by thousands of healthy families</span>
         </div>
 
-        <h1>The Safest Way to Shop for Groceries</h1>
+        <h1>The Safest Way to<br/>Shop for Groceries</h1>
         <p className="section-subtitle">
           Use the Olive Food Scanner App to Instantly Eliminate Harmful
           Ingredients from Your Family's Diet and Get Expert-Backed Food
