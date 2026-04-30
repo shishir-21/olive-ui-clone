@@ -138,7 +138,7 @@ To deploy your own version:
 **Shishir Mahato**
 
 * GitHub: https://github.com/shishir-21
-* LinkedIn: *(add your link here)*
+* LinkedIn: https://www.linkedin.com/in/shishir-mahato-4468aa280/
 
 ---
 
